@@ -1,0 +1,490 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+        <script async="" src="../gtag/js?id=UA-94102737-10"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-94102737-10');
+            
+        </script>
+    <link rel="index" title="Index" href="../genindex/index.htm"><link rel="search" title="Search" href="../search/index.htm"><link rel="next" title="Using Virtual Environments" href="../using-virtualenvs/index.htm"><link rel="prev" title="Settings and Configuration" href="../configuration/index.htm">
+        <link rel="canonical" href="index.htm">
+
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1">
+        <title>Pegasus’s Code Structure - Pegasus documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89">
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e">
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewbox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewbox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewbox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewbox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewbox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewbox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M13 12h5"></path>
+      <path d="M13 15h4"></path>
+      <path d="M13 18h1"></path>
+      <path d="M13 9h4"></path>
+      <path d="M13 6h1"></path>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.htm"><div class="brand">Pegasus  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.htm">
+  
+  
+  <span class="sidebar-brand-text">Pegasus  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.htm">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.htm">Customizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.htm">Settings and Configuration</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Pegasus’s Code Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using-virtualenvs/index.htm">Using Virtual Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-end/index.htm">The Front End</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/index.htm">CSS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/overview/index.htm">Choosing a CSS Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/file-structure/index.htm">CSS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/pegasus-css/index.htm">Pegasus CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/tailwind/index.htm">Tailwind CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/bootstrap/index.htm">Bootstrap (and Material)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/bulma/index.htm">Bulma</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../page-metadata/index.htm">Project/Page Metadata and SEO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.htm">Using Docker in Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../teams/index.htm">Using Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subscriptions/index.htm">Subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../payments/index.htm">E-Commerce / Payments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../forms/index.htm">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.htm">APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internationalization/index.htm">Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wagtail/index.htm">Wagtail CMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flags/index.htm">Feature Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../celery/index.htm">Celery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../async/index.htm">Async and Websocket Support</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../deployment/index.htm">Deployment</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/overview/index.htm">Deployment Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/overview/index.htm#officially-supported-platforms">Officially supported platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/heroku/index.htm">Heroku</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/fly/index.htm">Fly.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/render/index.htm">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/digital-ocean/index.htm">Digital Ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/google-cloud/index.htm">Google Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/production-checklist/index.htm">Production checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/troubleshooting/index.htm">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../github-actions/index.htm">Using Github Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbooks/index.htm">Cookbooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.htm">Upgrading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.htm">Version History and Release Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="pegasus-s-code-structure">
+<h1>Pegasus’s Code Structure<a class="headerlink" href="#pegasus-s-code-structure" title="Permalink to this heading">#</a></h1>
+<section id="overall-structure">
+<h2>Overall structure<a class="headerlink" href="#overall-structure" title="Permalink to this heading">#</a></h2>
+<p>This is the overall structure of a new Pegasus project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{{project_name}}/
+├── {{project_name}}
+├── apps
+│   ├── subscriptions
+│   ├── teams
+│   ├── users
+│   ├── utils
+│   └── web
+├── pegasus
+│   ├── apps
+├── assets
+│   ├── javascript
+│   └── styles
+├── requirements
+└── static
+    ├── css
+    ├── images
+    └── js
+├── templates
+</pre></div>
+</div>
+<p>The first three directories are Python modules while the remaining ones are not.</p>
+</section>
+<section id="your-project-name-module">
+<h2>Your <code class="docutils literal notranslate"><span class="pre">{{project_name}}</span></code> module<a class="headerlink" href="#your-project-name-module" title="Permalink to this heading">#</a></h2>
+<p>This is your Django project root directory.
+It’s where your settings, root urlconf and <code class="docutils literal notranslate"><span class="pre">wsgi.py</span></code> file will live.</p>
+</section>
+<section id="your-apps-module">
+<h2>Your <code class="docutils literal notranslate"><span class="pre">apps</span></code> module<a class="headerlink" href="#your-apps-module" title="Permalink to this heading">#</a></h2>
+<p>This is where your project’s apps will live.
+It is pre-populated with Pegasus’s default apps for you to further customize to your needs.</p>
+<p>The module starts with several apps, depending on your configuration.
+Here are some of the main ones:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">content</span></code> is where the <a class="reference internal" href="../wagtail/index.htm"><span class="doc std std-doc">Wagtail CMS models</span></a> are configured.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">subscriptions</span></code> is for functionality related to <a class="reference internal" href="../subscriptions/index.htm"><span class="doc std std-doc">Stripe subscriptions</span></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">users</span></code> is where your user models and views are defined.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">teams</span></code> is where <a class="reference internal" href="../teams/index.htm"><span class="doc std std-doc">team models and views</span></a> are defined.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">utils</span></code> is a set of functionality shared across the project.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">web</span></code> contains utilities and components related to the generic views, layouts and templates.</p></li>
+</ul>
+</section>
+<section id="the-pegasus-module">
+<h2>The <code class="docutils literal notranslate"><span class="pre">pegasus</span></code> module<a class="headerlink" href="#the-pegasus-module" title="Permalink to this heading">#</a></h2>
+<p>This is where the Pegasus examples live.</p>
+<p>In general, it is not expected that you’ll need to modify much in this module, though feel free to do so!</p>
+</section>
+<section id="the-requirements-folder">
+<h2>The <code class="docutils literal notranslate"><span class="pre">requirements</span></code> folder<a class="headerlink" href="#the-requirements-folder" title="Permalink to this heading">#</a></h2>
+<p>This is where you define your project’s Python requirements.</p>
+<p>Requirements are managed using <code class="docutils literal notranslate"><span class="pre">pip-tools</span></code>.
+For more information on using it see <a class="reference external" href="https://github.com/jazzband/pip-tools">their documentation</a>.</p>
+</section>
+<section id="the-assets-folder">
+<h2>The <code class="docutils literal notranslate"><span class="pre">assets</span></code> folder<a class="headerlink" href="#the-assets-folder" title="Permalink to this heading">#</a></h2>
+<p>This is where the source files for your site’s JavaScript and CSS live.
+These files are what you should edit to change your JS and CSS.</p>
+<p>See <a class="reference internal" href="../front-end/index.htm"><span class="doc std std-doc">front-end</span></a> for more information on how to compile these files.</p>
+</section>
+<section id="the-static-folder">
+<h2>The <code class="docutils literal notranslate"><span class="pre">static</span></code> folder<a class="headerlink" href="#the-static-folder" title="Permalink to this heading">#</a></h2>
+<p>This folder contains your project’s static files, including the compiled output files
+from the <code class="docutils literal notranslate"><span class="pre">assets</span></code> folder as well as images.</p>
+</section>
+<section id="the-templates-folder">
+<h2>The <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder<a class="headerlink" href="#the-templates-folder" title="Permalink to this heading">#</a></h2>
+<p>This folder contains your project’s Django templates.
+There is one sub-folder for each application that has templates.
+The majority of the project’s base template layouts are in the <code class="docutils literal notranslate"><span class="pre">templates/web</span></code> folder.</p>
+</section>
+<section id="code-formatting">
+<h2>Code formatting<a class="headerlink" href="#code-formatting" title="Permalink to this heading">#</a></h2>
+<p>For projects that have enabled the <code class="docutils literal notranslate"><span class="pre">Autoformat</span> <span class="pre">code</span></code> option, the code will have been formatted
+using <a class="reference external" href="https://black.readthedocs.io/en/stable/">black</a> and <a class="reference external" href="https://pycqa.github.io/isort/">isort</a>.</p>
+<p>The project will also include <a class="reference external" href="https://pre-commit.com/">pre-commit</a> as a dependency in the requirements file
+as well as the <code class="docutils literal notranslate"><span class="pre">.pre-commit-config.yaml</span></code> file in the root directory. pre-commit is a tool for managing pre-commit
+hooks - which can be used to ensure your code matches the correct format when it’s committed.</p>
+<p>After installing the project dependencies you can install the pre-commit hooks:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pre-commit install --install-hooks
+pre-commit installed at .git/hooks/pre-commit
+</pre></div>
+</div>
+<p>The default configuration that ships with Pegasus will run <code class="docutils literal notranslate"><span class="pre">isort</span></code> and <code class="docutils literal notranslate"><span class="pre">black</span></code> prior to every Git
+commit. If there are fixes that are needed you will be notified in the shell output.</p>
+<section id="pre-commit-usage">
+<h3>pre-commit Usage<a class="headerlink" href="#pre-commit-usage" title="Permalink to this heading">#</a></h3>
+<p><strong>Manually running hooks</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># run all hooks against currently staged files</span>
+pre-commit<span class="w"> </span>run
+<span class="c1"># run all the hooks against all the files. This is a useful invocation if you are using pre-commit in CI.</span>
+pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
+<span class="c1"># only run the isort hook against all staged files</span>
+pre-commit<span class="w"> </span>run<span class="w"> </span>isort
+</pre></div>
+</div>
+<p><strong>Temporarily disable hooks</strong>
+See https://pre-commit.com/#temporarily-disabling-hooks</p>
+<p>For more information on using and configuring pre-commit check out the
+<a class="reference external" href="https://pre-commit.com/#quick-start">pre-commit docs</a></p>
+</section>
+<section id="tool-configurations">
+<h3>Tool configurations<a class="headerlink" href="#tool-configurations" title="Permalink to this heading">#</a></h3>
+<p>The configuration for the tools can be found in the <a class="reference external" href="https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html#what-on-earth-is-a-pyproject-toml-file"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a> file.</p>
+<p><strong>isort</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Filter Files</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">true</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Profile</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">black</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Line Length</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">120</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference external" href="https://pycqa.github.io/isort/docs/configuration/options">iSort docs</a></p>
+<p><strong>black</strong></p>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Line Length</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">120</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a class="reference external" href="https://black.readthedocs.io/en/stable/usage_and_configuration/the_basics.html">Black docs</a></p>
+</section>
+<section id="upgrading">
+<h3>Upgrading<a class="headerlink" href="#upgrading" title="Permalink to this heading">#</a></h3>
+<p>See <a class="reference external" href="../cookbooks/index.htm#migrating-to-auto-formatted-code">this cookbook</a>
+for guidance on how to enable code formatting on an existing Pegasus project.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../using-virtualenvs/index.htm">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Using Virtual Environments</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../configuration/index.htm">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Settings and Configuration</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Cory Zue
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Pegasus’s Code Structure</a><ul>
+<li><a class="reference internal" href="#overall-structure">Overall structure</a></li>
+<li><a class="reference internal" href="#your-project-name-module">Your <code class="docutils literal notranslate"><span class="pre">{{project_name}}</span></code> module</a></li>
+<li><a class="reference internal" href="#your-apps-module">Your <code class="docutils literal notranslate"><span class="pre">apps</span></code> module</a></li>
+<li><a class="reference internal" href="#the-pegasus-module">The <code class="docutils literal notranslate"><span class="pre">pegasus</span></code> module</a></li>
+<li><a class="reference internal" href="#the-requirements-folder">The <code class="docutils literal notranslate"><span class="pre">requirements</span></code> folder</a></li>
+<li><a class="reference internal" href="#the-assets-folder">The <code class="docutils literal notranslate"><span class="pre">assets</span></code> folder</a></li>
+<li><a class="reference internal" href="#the-static-folder">The <code class="docutils literal notranslate"><span class="pre">static</span></code> folder</a></li>
+<li><a class="reference internal" href="#the-templates-folder">The <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder</a></li>
+<li><a class="reference internal" href="#code-formatting">Code formatting</a><ul>
+<li><a class="reference internal" href="#pre-commit-usage">pre-commit Usage</a></li>
+<li><a class="reference internal" href="#tool-configurations">Tool configurations</a></li>
+<li><a class="reference internal" href="#upgrading">Upgrading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script type="module" src="../scriv-chat%400.0.5/dist/scriv-chat/scriv-chat.esm.js"></script>
+    
+<scriv-chat style="position:fixed; right: 20px; bottom: 20px;" visible="false" team="pegasus" bot="pegasus-docs" button-text="Ask a question"></scriv-chat>
+</body>
+</html>

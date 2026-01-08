@@ -1,0 +1,773 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+        <script async="" src="../gtag/js?id=UA-94102737-10"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-94102737-10');
+            
+        </script>
+    <link rel="index" title="Index" href="../genindex/index.htm"><link rel="search" title="Search" href="../search/index.htm"><link rel="next" title="E-Commerce / Payments" href="../payments/index.htm"><link rel="prev" title="Using Teams" href="../teams/index.htm">
+        <link rel="canonical" href="index.htm">
+
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1">
+        <title>Subscriptions - Pegasus documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89">
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e">
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewbox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewbox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewbox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewbox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewbox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewbox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M13 12h5"></path>
+      <path d="M13 15h4"></path>
+      <path d="M13 18h1"></path>
+      <path d="M13 9h4"></path>
+      <path d="M13 6h1"></path>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.htm"><div class="brand">Pegasus  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.htm">
+  
+  
+  <span class="sidebar-brand-text">Pegasus  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.htm">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.htm">Customizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.htm">Settings and Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code-structure/index.htm">Pegasus’s Code Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using-virtualenvs/index.htm">Using Virtual Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-end/index.htm">The Front End</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/index.htm">CSS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/overview/index.htm">Choosing a CSS Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/file-structure/index.htm">CSS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/pegasus-css/index.htm">Pegasus CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/tailwind/index.htm">Tailwind CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/bootstrap/index.htm">Bootstrap (and Material)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/bulma/index.htm">Bulma</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../page-metadata/index.htm">Project/Page Metadata and SEO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.htm">Using Docker in Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../teams/index.htm">Using Teams</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../payments/index.htm">E-Commerce / Payments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../forms/index.htm">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.htm">APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internationalization/index.htm">Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wagtail/index.htm">Wagtail CMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flags/index.htm">Feature Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../celery/index.htm">Celery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../async/index.htm">Async and Websocket Support</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../deployment/index.htm">Deployment</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/overview/index.htm">Deployment Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/overview/index.htm#officially-supported-platforms">Officially supported platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/heroku/index.htm">Heroku</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/fly/index.htm">Fly.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/render/index.htm">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/digital-ocean/index.htm">Digital Ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/google-cloud/index.htm">Google Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/production-checklist/index.htm">Production checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/troubleshooting/index.htm">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../github-actions/index.htm">Using Github Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbooks/index.htm">Cookbooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.htm">Upgrading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.htm">Version History and Release Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="subscriptions">
+<h1>Subscriptions<a class="headerlink" href="#subscriptions" title="Permalink to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>Subscriptions in Pegasus have three components which must all be setup in order for them to work correctly.</p>
+<ol class="arabic simple">
+<li><p><strong>Stripe Billing data</strong>. This is configured in Stripe.</p></li>
+<li><p><strong>Local Stripe models</strong>. These are synced automatically from Stripe to your local database, using
+<a class="reference external" href="https://github.com/dj-stripe/dj-stripe"><code class="docutils literal notranslate"><span class="pre">dj-stripe</span></code></a>.</p></li>
+<li><p><strong>Pegasus metadata</strong>. This is configured in <code class="docutils literal notranslate"><span class="pre">apps/subscriptions/metadata.py</span></code> and used to augment
+the data from Stripe.</p></li>
+</ol>
+<p>The easiest way to set up all three is to follow the guide below.</p>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
+<p>Complete the following steps in order to set up your first subscription workflow.</p>
+<section id="choose-your-billing-setup">
+<h3>Choose your billing setup<a class="headerlink" href="#choose-your-billing-setup" title="Permalink to this heading">#</a></h3>
+<p>If you haven’t already, <a class="reference internal" href="../getting-started/index.htm"><span class="doc std std-doc">set up Pegasus and create an account</span></a>.
+In your project settings you will see several options related to subscriptions.</p>
+<p><img alt="Subscriptions Project configuration" src="../_images/subscriptions-config.png"></p>
+<p>The first option is your <em>billing model</em>. Most projects should choose <em>standard</em>,
+which lets you create multiple plans with different monthly or annual prices.
+Choose <em>per unit</em> if you want to charge a variable cost based on the number of units used,
+for example, if you want to charge for every team-member.
+<a class="reference external" href="https://stripe.com/docs/billing/subscriptions/usage-based">Metered billing</a>, while not officially supported
+is largely compatible with the standard model.</p>
+<p>The second option is your <em>pricing UI</em>. If you’re on a standard model or metered billing,
+it’s recommended to use Stripe’s <a class="reference external" href="https://stripe.com/docs/payments/checkout/pricing-table">embedded pricing table</a>.
+If you’re using per-unit billing, it’s recommended to choose “managed by your application”.</p>
+<p>If all of this is intimidating, don’t worry! You can always change these things later.
+If you’re unsure what you want to use, it is recommended to choose “standard” and “embedded pricing table” to start,
+as that is the simplest setup and works well for most projects.</p>
+</section>
+<section id="set-up-your-billing-model-in-stripe">
+<h3>Set up your billing model in Stripe<a class="headerlink" href="#set-up-your-billing-model-in-stripe" title="Permalink to this heading">#</a></h3>
+<p>Before setting up your development environment for subscriptions, you’ll need to create
+your billing model in Stripe. You should do this in a test account for development.
+You’ll eventually be able to copy everything ot production once you’re happy with the set up.</p>
+<p><a class="reference external" href="https://stripe.com/docs/billing/subscriptions/build-subscriptions?ui=checkout#create-pricing-model">Stripe’s documentation</a>
+has guidance on doing this. At a minimum you should create at least one product with a “recurring” price.
+If you want to offer multiple pricing plans, create one product for each plan.
+If you want to offer both monthly and annual pricing, make sure every product you add includes
+both a “monthly” and a “yearly” price.</p>
+<p>If you are using the Stripe embedded pricing table, you may also want to add product
+descriptions and <a class="reference external" href="https://stripe.com/docs/payments/checkout/pricing-table#product-features">features</a>,
+as these will be used on your pricing page.</p>
+<p>If you are using the Stripe embedded pricing table, you should also set it up now,
+following the <a class="reference external" href="https://stripe.com/docs/payments/checkout/pricing-table">Stripe pricing table documentation</a>.</p>
+</section>
+<section id="set-up-your-development-environment">
+<h3>Set up your development environment<a class="headerlink" href="#set-up-your-development-environment" title="Permalink to this heading">#</a></h3>
+<p>Once you’ve created your billing model on Stripe, follow these instructions to set up your development environment.</p>
+<ol class="arabic simple">
+<li><p>Update the <code class="docutils literal notranslate"><span class="pre">STRIPE_*</span></code> variables in your project’s <a class="reference external" href="../configuration/index.htm#settings-and-environment-files"><code class="docutils literal notranslate"><span class="pre">.env</span></code> file</a>
+to match the keys from Stripe. See <a class="reference external" href="https://stripe.com/docs/keys">this page</a> to find your API keys.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">./manage.py</span> <span class="pre">bootstrap_subscriptions</span></code>. If things are set up correctly,
+you should see output that includes information about each product / price that you created,
+and an output starting with <code class="docutils literal notranslate"><span class="pre">ACTIVE_PRODUCTS</span> <span class="pre">=</span> </code> containing the products you just created.
+This step will also automatically update your API keys in the Django admin, as
+described in <a class="reference external" href="https://dj-stripe.dev/api_keys/#adding-new-api-keys">dj-stripe’s instructions</a>.</p></li>
+<li><p>Next, if you are <em>not</em> using the Stripe embedded pricing table:</p>
+<ol class="arabic simple">
+<li><p>Paste the <code class="docutils literal notranslate"><span class="pre">ACTIVE_PRODUCTS</span></code> output from the previous step into <code class="docutils literal notranslate"><span class="pre">apps/subscriptions/metadata.py</span></code>
+overriding what is there. Update any other details you want, for example,
+the “description” and “features” fields.</p></li>
+<li><p>Optionally edit the <code class="docutils literal notranslate"><span class="pre">ACTIVE_PLAN_INTERVALS</span></code> variable in <code class="docutils literal notranslate"><span class="pre">apps/subscriptions/metadata.py</span></code>
+if you don’t plan to include both monthly and annual offerings.</p></li>
+</ol>
+</li>
+<li><p>Alternatively, if you <em>are</em> using the Stripe embedded pricing table:</p>
+<ol class="arabic simple">
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">STRIPE_PRICING_TABLE_ID</span></code> variable in your settings/environment to the pricing table ID you created in Stripe.</p></li>
+</ol>
+</li>
+</ol>
+<p>Now login and click the “Subscription” tab in the navigation.
+If you’ve set things up correctly you should see a page that looks like this
+(it will look slightly different if you are using the Stripe pricing table, or a different CSS framework):</p>
+<p><img alt="Subscription Example" src="../_images/subscription-example.png"></p>
+</section>
+</section>
+<section id="configuring-the-pricing-table">
+<h2>Configuring the pricing table<a class="headerlink" href="#configuring-the-pricing-table" title="Permalink to this heading">#</a></h2>
+<section id="using-the-embedded-stripe-pricing-table">
+<h3>Using the embedded Stripe pricing table<a class="headerlink" href="#using-the-embedded-stripe-pricing-table" title="Permalink to this heading">#</a></h3>
+<p>If you are using the Stripe embedded pricing table, then all customization happens within the Stripe dashboard.
+You can change the products, names, descriptions, images, and features by editing the products in Stripe with the desired changes.
+You can also change the color scheme and other options.</p>
+<p>After setting up your pricing table, you should add a custom confirmation URL for each product.
+This tells Stripe to return to your application to properly process the subscription after it is purchased.</p>
+<p>To do this, edit your pricing table, and under “Payment settings” change the confirmation page setting to
+“Don’t show confirmation page (Redirect customers to your website.)”.
+It should look like this:</p>
+<p><img alt="Stripe Confirmation Page" src="../_images/stripe-confirmation-page.png"></p>
+<p>In the URL box, put the following address for (for development), leaving <code class="docutils literal notranslate"><span class="pre">{CHECKOUT_SESSION_ID}</span></code> exactly like it is written:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>http://localhost:8000/subscriptions/confirm/?session_id={CHECKOUT_SESSION_ID}
+</pre></div>
+</div>
+<p>In production, enable https, and replace <code class="docutils literal notranslate"><span class="pre">localhost:8000</span></code> with the url of our site.
+E.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>https://&lt;yoursite&gt;/subscriptions/confirm/?session_id={CHECKOUT_SESSION_ID}
+</pre></div>
+</div>
+<p><em>Make sure you check the option to apply this change to all prices</em> if you’re using monthly and annual pricing.
+And then <em>repeat this process for every product in the pricing page</em>.</p>
+<p><strong>If you don’t make this change, you will not see subscriptions updated unless you are also running webhooks.</strong></p>
+</section>
+<section id="using-the-in-app-pricing-table">
+<h3>Using the in-app pricing table<a class="headerlink" href="#using-the-in-app-pricing-table" title="Permalink to this heading">#</a></h3>
+<p>If you are using the in-app pricing table, your pricing table configuration is handled in <code class="docutils literal notranslate"><span class="pre">metadata.py</span></code>.
+You can modify <code class="docutils literal notranslate"><span class="pre">ACTIVE_PRODUCTS</span></code> and <code class="docutils literal notranslate"><span class="pre">ACTIVE_PLAN_INTERVALS</span></code> and see how the page changes.</p>
+<p>Whenever you make changes in Stripe, you will need to re-run <code class="docutils literal notranslate"><span class="pre">./manage.py</span> <span class="pre">bootstrap_subscriptions</span></code>,
+and incorporate any necessary changes into the <code class="docutils literal notranslate"><span class="pre">ACTIVE_PRODUCTS</span></code> list.</p>
+<p>More background and details on this set up can be found in this
+<a class="reference external" href="https://www.saaspegasus.com/guides/django-stripe-integrate/">Django Stripe Integration Guide</a>.</p>
+</section>
+</section>
+<section id="customer-portal">
+<h2>Customer Portal<a class="headerlink" href="#customer-portal" title="Permalink to this heading">#</a></h2>
+<p>Pegasus uses the <a class="reference external" href="https://stripe.com/docs/billing/subscriptions/customer-portal">Stripe Billing Customer Portal</a>
+for subscription management after subscription creation.</p>
+<p>To set up the portal, it’s recommended you follow along with <a class="reference external" href="https://stripe.com/docs/billing/subscriptions/integrating-customer-portal">Stripe’s integration guide</a>.</p>
+<p>To use the portal you will also need to set up webhooks as per below.</p>
+<p>Pegasus ships with webhooks to handle some common actions taken in the billing portal, including:</p>
+<ul class="simple">
+<li><p>Subscription upgrades and downgrades</p></li>
+<li><p>Subscription cancellation (immediately)</p></li>
+<li><p>Subscription cancellations (end of billing period)</p></li>
+</ul>
+<p>In the Stripe dashboard, you will need to subscribe to a minimum of <code class="docutils literal notranslate"><span class="pre">customer.subscription.updated</span></code>
+and <code class="docutils literal notranslate"><span class="pre">customer.subscription.deleted</span></code> to ensure subscription changes through the portal make it to your app successfully.</p>
+<p>Payment method updates are coming in a future release.</p>
+</section>
+<section id="webhooks">
+<h2>Webhooks<a class="headerlink" href="#webhooks" title="Permalink to this heading">#</a></h2>
+<p>Webhooks are used to notify your app about events that happen in Stripe, e.g. failed payments.
+More information can be found in <a class="reference external" href="https://stripe.com/docs/webhooks">Stripe’s webhook documentation</a>.</p>
+<p>Pegasus ships with webhook functionality ready to go, including default handling of many events
+taken in Stripe’s checkout and billing portals. That said, you are strongly encouraged
+to test locally using <a class="reference external" href="https://stripe.com/docs/webhooks/test">Stripe’s excellent guide</a>.</p>
+<p>The following minimum set of webhooks are connected by default:</p>
+<p>For the billing portal:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">customer.subscription.deleted</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">customer.subscription.updated</span></code></p></li>
+</ul>
+<p>For Stripe Checkout:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">checkout.session.completed</span></code></p></li>
+</ul>
+<p>A few pieces of setup that are required:</p>
+<ul class="simple">
+<li><p>For the webhook URL, it should be https://yourserver.com/stripe/webhook/. <strong>The trailing slash is required.</strong>
+If using the Stripe CLI in development you can use <code class="docutils literal notranslate"><span class="pre">stripe</span> <span class="pre">listen</span> <span class="pre">--forward-to</span> <span class="pre">localhost:8000/stripe/webhook/</span></code></p></li>
+<li><p>Make sure to set <code class="docutils literal notranslate"><span class="pre">DJSTRIPE_WEBHOOK_SECRET</span></code> in your <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> or environment.
+This value can be found when configuring your webhook endpoint in the Stripe dashboard,
+or read from the console output in the Stripe CLI.</p></li>
+</ul>
+<p>Once webhooks are properly setup, all the underlying Stripe data will be automatically synced from
+Stripe with no additional setup on your part.</p>
+<section id="custom-webhook-handling">
+<h3>Custom Webhook Handling<a class="headerlink" href="#custom-webhook-handling" title="Permalink to this heading">#</a></h3>
+<p>You may want to do more than just update the underlying Stripe objects when processing webhooks,
+for example, notifying a customer or admin of a failed payment.</p>
+<p>Pegasus ships with an example of executing custom logic from a webhook in <code class="docutils literal notranslate"><span class="pre">apps/subscriptions/webhooks.py</span></code>.
+This basic example will mail your project admins when a Subscription is canceled.</p>
+<p>More details on custom webhooks can be found in the <a class="reference external" href="https://dj-stripe.readthedocs.io/en/stable/usage/webhooks.html">dj-stripe documentation</a>.</p>
+</section>
+</section>
+<section id="supporting-multiple-currencies">
+<h2>Supporting multiple currencies<a class="headerlink" href="#supporting-multiple-currencies" title="Permalink to this heading">#</a></h2>
+<p>If you use Stripe’s embedded pricing table you get multi-currency support out of the box.
+Follow <a class="reference external" href="https://stripe.com/docs/payments/checkout/present-local-currencies?platform=multi-currency-prices">the Stripe guide</a>
+to set your products and prices up for multiple currencies.</p>
+<p>If you use an in-app pricing table, Stripe will still present your prices to customers
+in local currencies, but the pricing table itself will display the prices in your default currency.</p>
+</section>
+<section id="free-trials">
+<h2>Free trials<a class="headerlink" href="#free-trials" title="Permalink to this heading">#</a></h2>
+<p>You can easily enable free trials using the option in Stripe’s embedded pricing table.
+Your customers will be able to sign up with their credit cards for a trial and will have the same
+experience in your application as someone who is paying for the plan.
+They’ll be able to update their status from the customer portal, and once the trial period ends they will be billed.</p>
+<p>If you’re using trials you must set up webhooks to be notified whether the customer subscribes or cancels
+at the end of their trial.</p>
+<p>It is also possible to use free trials without the embedded pricing table.
+To do so, you need to add a <code class="docutils literal notranslate"><span class="pre">trial_end</span></code> or <code class="docutils literal notranslate"><span class="pre">trial_period_days</span></code> value to the <code class="docutils literal notranslate"><span class="pre">subscription_data</span></code>
+in <code class="docutils literal notranslate"><span class="pre">create_stripe_checkout_session</span></code>, as described in <a class="reference external" href="https://stripe.com/docs/billing/subscriptions/trials">the Stripe documentation</a>.</p>
+</section>
+<section id="feature-gating">
+<h2>Feature-Gating<a class="headerlink" href="#feature-gating" title="Permalink to this heading">#</a></h2>
+<p>Pegasus ships with a demo page with a few feature-gating examples, which
+are available from a new Pegasus installation under the “Subscription Demo” tab.</p>
+<p>These include:</p>
+<ol class="arabic simple">
+<li><p>Changing content on a page based on the user/team’s subscription.</p></li>
+<li><p>Restricting access to an entire page based on the user/team’s subscription.</p></li>
+<li><p>Showing subscription details like plan, payment details, and renewal date.</p></li>
+</ol>
+<section id="using-the-active-subscription-required-decorator">
+<h3>Using the <code class="docutils literal notranslate"><span class="pre">active_subscription_required</span></code> decorator<a class="headerlink" href="#using-the-active-subscription-required-decorator" title="Permalink to this heading">#</a></h3>
+<p>One common use-case is restricting access to a page based on the user’s subscription.</p>
+<p>Pegasus ships with a decorator that allows you to do this.
+You can use it as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@login_required</span>
+<span class="nd">@active_subscription_required</span>
+<span class="k">def</span> <span class="nf">subscription_gated_page</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">subscription_holder</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">TemplateResponse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;subscriptions/subscription_gated_page.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the user doesn’t have an active subscription, they’ll be redirected to the subscription page to upgrade.</p>
+<p>You can also restrict access based on a specific plan (or set of plans), as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@login_required</span>
+<span class="nd">@active_subscription_required</span><span class="p">(</span><span class="n">limit_to_plans</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;pro&quot;</span><span class="p">,</span> <span class="s2">&quot;enterprise&quot;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">subscription_gated_page</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">subscription_holder</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">TemplateResponse</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;subscriptions/subscription_gated_page.html&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In this case the user will only be allowed to view the page if they have a pro or enterprise plan.</p>
+</section>
+<section id="using-the-get-feature-gate-check-helper-function">
+<h3>Using the <code class="docutils literal notranslate"><span class="pre">get_feature_gate_check</span></code> helper function<a class="headerlink" href="#using-the-get-feature-gate-check-helper-function" title="Permalink to this heading">#</a></h3>
+<p>For more fine-grained control you can use the <code class="docutils literal notranslate"><span class="pre">get_feature_gate_check</span></code> helper function.
+This takes in two arguments, the <code class="docutils literal notranslate"><span class="pre">subscription_holder</span></code> (usually a User or Team), and optionally the same
+<code class="docutils literal notranslate"><span class="pre">limit_to_plans</span></code> list above, and returns a <code class="docutils literal notranslate"><span class="pre">FeatureGateCheckResult</span></code>, which includes whether the
+check passed (subscription holder has a subscription of the right type), and an optional message
+explaining the answer.</p>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">apps.subscriptions.feature_gating</span> <span class="kn">import</span> <span class="n">get_feature_gate_check</span>
+
+
+<span class="k">def</span> <span class="nf">my_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">check_result</span> <span class="o">=</span> <span class="n">get_feature_gate_check</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">team</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;professional&quot;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">check_result</span><span class="o">.</span><span class="n">passed</span><span class="p">:</span>
+        <span class="n">do_actions_pro_only</span><span class="p">()</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Pro actions skipped: </span><span class="si">{</span><span class="n">check_result</span><span class="o">.</span><span class="n">message</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="per-unit-per-seat-billing">
+<h2>Per-Unit / Per-Seat Billing<a class="headerlink" href="#per-unit-per-seat-billing" title="Permalink to this heading">#</a></h2>
+<p>Pegasus supports per-unit / per-seat billing.
+Choose this option when building your project to enable it.
+<strong>It is not recommended to use the Stripe embedded pricing table if you are using per-unit billing.</strong></p>
+<p>For Team-based builds the default unit is Team members.
+For non-Team builds you will have to implement your own definition of what to use for billing quantities.</p>
+<p>Here is <a class="reference external" href="https://youtu.be/v_ayMEj924w">a short video walkthrough of this feature</a>.</p>
+<section id="choosing-your-billing-model">
+<h3>Choosing your billing model<a class="headerlink" href="#choosing-your-billing-model" title="Permalink to this heading">#</a></h3>
+<p>Refer to the <a class="reference external" href="https://stripe.com/docs/products-prices/pricing-models">Stripe documentation</a> for how to set this up in your Price model.
+You can use any of:</p>
+<ul class="simple">
+<li><p>Standard pricing (e.g. $10/user)</p></li>
+<li><p>Package pricing (e.g. $50 / 5 new users)</p></li>
+<li><p>Tiered pricing (graduated or volume) (e.g. $50 for up to 5 users, $5/user after that)</p></li>
+</ul>
+</section>
+<section id="displaying-prices-on-the-subscriptions-page">
+<h3>Displaying prices on the subscriptions page<a class="headerlink" href="#displaying-prices-on-the-subscriptions-page" title="Permalink to this heading">#</a></h3>
+<p>For per-unit billing you can no longer display a single upgrade price since it is dependent on the number of units.</p>
+<p>To avoid displaying an “unknown” price when showing the subscription, you can add a <code class="docutils literal notranslate"><span class="pre">price_displays</span></code> field to
+your <code class="docutils literal notranslate"><span class="pre">ProductMetadata</span></code> objects that takes the following format:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ProductMetadata</span><span class="p">(</span>
+    <span class="n">stripe_id</span><span class="o">=</span><span class="s1">&#39;&lt;stripe id&gt;&#39;</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Graduated Pricing&#39;</span><span class="p">),</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;A Graduated Pricing plan&#39;</span><span class="p">,</span>
+    <span class="n">price_displays</span><span class="o">=</span><span class="p">{</span>
+        <span class="n">PlanInterval</span><span class="o">.</span><span class="n">month</span><span class="p">:</span> <span class="s1">&#39;From $10 per user&#39;</span><span class="p">,</span>
+        <span class="n">PlanInterval</span><span class="o">.</span><span class="n">year</span><span class="p">:</span> <span class="s1">&#39;From $100 per user&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">),</span>
+</pre></div>
+</div>
+<p>This will show “From $10 per user” or “From $100 per user” when the monthly or annual plan is selected, respectively.</p>
+<section id="per-seat-pricing-and-the-embedded-pricing-table">
+<h4>Per-seat pricing and the embedded pricing table.<a class="headerlink" href="#per-seat-pricing-and-the-embedded-pricing-table" title="Permalink to this heading">#</a></h4>
+<p><strong>Though it is possible to use the pricing table with per-seat billing, it is not recommended.</strong></p>
+<p>This is because Stripe does not allow you to pass per-seat quantities with the Pricing Table, so if you use the pricing table
+with per-seat pricing, your users will be able to choose the number of “seats” (quantity) when they check out.</p>
+<p>This is different from the expected behavior, which is that your app sets the quantity explicitly based on
+the number of team members (or your own business logic, for user-based builds).
+Since Pegasus is set up to automatically update the subscription quantity based on the “usage” in your application,
+this could result in your users buying a certain number of seats, and then unexpectedly having the price change
+to the amount they are actually using.</p>
+<p>You can disable Pegasus automatically updating the per-seat quantity, and then modify your application’s
+business logic to be based off the “quantity” property of the user/team’s subscription, though this is not
+an officially supported workflow.</p>
+</section>
+</section>
+<section id="keeping-your-stripe-data-up-to-date">
+<h3>Keeping your Stripe data up to date<a class="headerlink" href="#keeping-your-stripe-data-up-to-date" title="Permalink to this heading">#</a></h3>
+<p>When changes are made that impact a user’s pricing, you will need to notify Stripe of the change.
+This should happen automatically every 24 hours as long as you have enabled celery and celerybeat.
+You can also trigger it manually via a management command <code class="docutils literal notranslate"><span class="pre">./manage.py</span> <span class="pre">sync_subscriptions</span></code>.</p>
+<p>To ensure this command works properly, you must implement two pieces of business logic:</p>
+<ol class="arabic simple">
+<li><p>You must update the billing model’s <code class="docutils literal notranslate"><span class="pre">billing_details_last_changed</span></code> field any time the number of units has change.</p></li>
+<li><p>You must override the <code class="docutils literal notranslate"><span class="pre">get_quantity</span></code> function on your billing model to tell Stripe how many units it contains.</p></li>
+</ol>
+<p><strong>If you use Teams with per-seat billing this will be automatically handled for you by default.</strong>
+All you have to do is run the management command or connect it to a periodic task.</p>
+<p>For User-based, or more complex billing models with Teams you will have to implement these changes yourself.</p>
+<section id="a-user-based-example">
+<h4>A User-based example<a class="headerlink" href="#a-user-based-example" title="Permalink to this heading">#</a></h4>
+<p>Here’s a quick example of how you might do this with User-based billing.</p>
+<p>Let’s say your app allows users to define workspaces and they are billed based on the number of workspaces they create.</p>
+<p>You might have a workspace model that looks like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Workspace</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">AUTH_USER_MODEL</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;workspaces&#39;</span><span class="p">)</span>
+    <span class="c1"># other workspace fields here</span>
+</pre></div>
+</div>
+<p>Then you would want to update the <code class="docutils literal notranslate"><span class="pre">billing_details_last_changed</span></code> field of the <code class="docutils literal notranslate"><span class="pre">CustomUser</span></code> object every time a workspace
+was added or removed (step 1, above). That might look something like this, using <a class="reference external" href="https://docs.djangoproject.com/en/4.0/topics/signals/">Django signals</a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@receiver</span><span class="p">(</span><span class="n">post_save</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="n">Workspace</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">update_billing_date_on_workspace_creation</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">created</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">created</span><span class="p">:</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">billing_details_last_changed</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+
+
+<span class="nd">@receiver</span><span class="p">(</span><span class="n">post_delete</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="n">Workspace</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">update_billing_date_on_workspace_deletion</span><span class="p">(</span><span class="n">sender</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">instance</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">billing_details_last_changed</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+    <span class="n">instance</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The other piece of code you would need to add is associating the <code class="docutils literal notranslate"><span class="pre">get_quantity</span></code> function on the user with the number of
+workspaces they have.</p>
+<p>You’d want to add a method like this to <code class="docutils literal notranslate"><span class="pre">CustomUser</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CustomUser</span><span class="p">(</span><span class="n">SubscriptionModelBase</span><span class="p">,</span> <span class="n">AbstractUser</span><span class="p">):</span>
+    <span class="c1"># other stuff here</span>
+    
+    <span class="k">def</span> <span class="nf">get_quantity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">workspaces</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="stripe-in-production">
+<h2>Stripe in Production<a class="headerlink" href="#stripe-in-production" title="Permalink to this heading">#</a></h2>
+<p>In development you will use your Stripe test account, but when it comes time to go to production,
+you will want to switch to the live account.</p>
+<p>This entails:</p>
+<ol class="arabic simple">
+<li><p>Setting <code class="docutils literal notranslate"><span class="pre">STRIPE_LIVE_MODE</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code> in your settings/environment.</p></li>
+<li><p>Populating <code class="docutils literal notranslate"><span class="pre">STRIPE_LIVE_PUBLIC_KEY</span></code> and <code class="docutils literal notranslate"><span class="pre">STRIPE_LIVE_SECRET_KEY</span></code> in your environment.</p></li>
+<li><p>Updating your <code class="docutils literal notranslate"><span class="pre">ACTIVE_PRODUCTS</span></code> to support both test and live mode (see below)</p></li>
+</ol>
+<section id="managing-test-and-live-stripe-products">
+<h3>Managing Test and Live Stripe Products<a class="headerlink" href="#managing-test-and-live-stripe-products" title="Permalink to this heading">#</a></h3>
+<p>When you run <code class="docutils literal notranslate"><span class="pre">bootstrap_subscriptions</span></code> Pegasus will generate a list of your <code class="docutils literal notranslate"><span class="pre">ACTIVE_PRODUCTS</span></code> that includes
+hard-coded Stripe Product IDs.
+This works great in development, but presents a problem when trying to enable live mode.</p>
+<p>One way to workaround this is to replace the hard-coded product IDs with values from your django settings.</p>
+<p>E.g. in <code class="docutils literal notranslate"><span class="pre">apps/subscriptions/metadata.py</span></code> change from:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ACTIVE_PRODUCTS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">ProductMetadata</span><span class="p">(</span>
+        <span class="n">stripe_id</span><span class="o">=</span><span class="s1">&#39;prod_abc&#39;</span><span class="p">,</span>  <span class="c1"># change this line for every product</span>
+        <span class="n">slug</span><span class="o">=</span><span class="s1">&#39;starter&#39;</span><span class="p">,</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>To:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ACTIVE_PRODUCTS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">ProductMetadata</span><span class="p">(</span>
+        <span class="n">stripe_id</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">STRIPE_PRICE_STARTER</span><span class="p">,</span>  <span class="c1"># to something like this</span>
+        <span class="n">slug</span><span class="o">=</span><span class="s1">&#39;starter&#39;</span><span class="p">,</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+<p>Then in your <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> file, you can define these values based on the <code class="docutils literal notranslate"><span class="pre">STRIPE_LIVE_MODE</span></code> setting:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">STRIPE_LIVE_MODE</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">bool</span><span class="p">(</span><span class="s2">&quot;STRIPE_LIVE_MODE&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="n">STRIPE_PRICE_STARTER</span> <span class="o">=</span> <span class="s2">&quot;prod_xyz&quot;</span> <span class="k">if</span> <span class="n">STRIPE_LIVE_MODE</span> <span class="k">else</span> <span class="s2">&quot;prod_abc&quot;</span>
+</pre></div>
+</div>
+<p>You will have to do this for each of your products.</p>
+</section>
+</section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h2>
+<p><strong>Stripe is not returning to the right site after accessing checkout or the billing portal.</strong></p>
+<p>There are two settings that determine how Stripe will call back to your site.</p>
+<p>If Stripe is returning to the <em>wrong site entirely</em> it is likely a problem with your Django <code class="docutils literal notranslate"><span class="pre">Site</span></code> configuration.
+See the documentation on <a class="reference external" href="../configuration/index.htm#absolute-urls">absolute URLs</a> to fix this.</p>
+<p>If Stripe is returning to the correct site, <em>but over HTTP instead of HTTPS</em> (or vice versa) then you
+need to change the <code class="docutils literal notranslate"><span class="pre">USE_HTTPS_IN_ABSOLUTE_URLS</span></code> setting in <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> or a production settings file.</p>
+<p><strong>Subscriptions are not being created in your app when using the embedded pricing table.</strong></p>
+<p>Make sure that you have updated the confirmation page for every product and every price
+to <code class="docutils literal notranslate"><span class="pre">https://&lt;yoursite&gt;/subscriptions/confirm/?session_id={CHECKOUT_SESSION_ID}</span></code> as described above.</p>
+<p>You can also turn on webhooks to fix this, though it’s recommended to use the custom confirmation page
+to provide a better user experience.</p>
+<p><strong>Stripe webhooks are failing with a signature error.</strong></p>
+<p>If you get an error like “No signatures found matching the expected signature for payload” or similar there are a few things to check:</p>
+<p>First, double check all of your API keys and secrets in your environment/settings files. These are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">STRIPE_LIVE_PUBLIC_KEY</span></code> and <code class="docutils literal notranslate"><span class="pre">STRIPE_LIVE_SECRET_KEY</span></code> (for live mode), or <code class="docutils literal notranslate"><span class="pre">STRIPE_TEST_PUBLIC_KEY</span></code> and <code class="docutils literal notranslate"><span class="pre">STRIPE_TEST_SECRET_KEY</span></code> (for test mode)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STRIPE_LIVE_MODE</span></code> should match whether you’re in live / test mode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DJSTRIPE_WEBHOOK_SECRET</span></code> should match the secret from the Stripe dashboard.</p></li>
+</ul>
+<p>If you have confirmed these are correct, also double check that you are on the <em>latest Stripe API version</em>.
+As of the time of this writing, that is 2022-08-01. Your API version can be found in the “Developers” section
+of the Stripe dashboard.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../payments/index.htm">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">E-Commerce / Payments</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../teams/index.htm">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Using Teams</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Cory Zue
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Subscriptions</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#choose-your-billing-setup">Choose your billing setup</a></li>
+<li><a class="reference internal" href="#set-up-your-billing-model-in-stripe">Set up your billing model in Stripe</a></li>
+<li><a class="reference internal" href="#set-up-your-development-environment">Set up your development environment</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuring-the-pricing-table">Configuring the pricing table</a><ul>
+<li><a class="reference internal" href="#using-the-embedded-stripe-pricing-table">Using the embedded Stripe pricing table</a></li>
+<li><a class="reference internal" href="#using-the-in-app-pricing-table">Using the in-app pricing table</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customer-portal">Customer Portal</a></li>
+<li><a class="reference internal" href="#webhooks">Webhooks</a><ul>
+<li><a class="reference internal" href="#custom-webhook-handling">Custom Webhook Handling</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#supporting-multiple-currencies">Supporting multiple currencies</a></li>
+<li><a class="reference internal" href="#free-trials">Free trials</a></li>
+<li><a class="reference internal" href="#feature-gating">Feature-Gating</a><ul>
+<li><a class="reference internal" href="#using-the-active-subscription-required-decorator">Using the <code class="docutils literal notranslate"><span class="pre">active_subscription_required</span></code> decorator</a></li>
+<li><a class="reference internal" href="#using-the-get-feature-gate-check-helper-function">Using the <code class="docutils literal notranslate"><span class="pre">get_feature_gate_check</span></code> helper function</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#per-unit-per-seat-billing">Per-Unit / Per-Seat Billing</a><ul>
+<li><a class="reference internal" href="#choosing-your-billing-model">Choosing your billing model</a></li>
+<li><a class="reference internal" href="#displaying-prices-on-the-subscriptions-page">Displaying prices on the subscriptions page</a><ul>
+<li><a class="reference internal" href="#per-seat-pricing-and-the-embedded-pricing-table">Per-seat pricing and the embedded pricing table.</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#keeping-your-stripe-data-up-to-date">Keeping your Stripe data up to date</a><ul>
+<li><a class="reference internal" href="#a-user-based-example">A User-based example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stripe-in-production">Stripe in Production</a><ul>
+<li><a class="reference internal" href="#managing-test-and-live-stripe-products">Managing Test and Live Stripe Products</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script type="module" src="../scriv-chat%400.0.5/dist/scriv-chat/scriv-chat.esm.js"></script>
+    
+<scriv-chat style="position:fixed; right: 20px; bottom: 20px;" visible="false" team="pegasus" bot="pegasus-docs" button-text="Ask a question"></scriv-chat>
+</body>
+</html>

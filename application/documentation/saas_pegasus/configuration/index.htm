@@ -1,0 +1,684 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+        <script async="" src="../gtag/js?id=UA-94102737-10"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-94102737-10');
+            
+        </script>
+    <link rel="index" title="Index" href="../genindex/index.htm"><link rel="search" title="Search" href="../search/index.htm"><link rel="next" title="Pegasus’s Code Structure" href="../code-structure/index.htm"><link rel="prev" title="Customizations" href="../customizations/index.htm">
+        <link rel="canonical" href="index.htm">
+
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1">
+        <title>Settings and Configuration - Pegasus documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89">
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e">
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewbox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewbox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewbox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewbox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewbox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewbox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M13 12h5"></path>
+      <path d="M13 15h4"></path>
+      <path d="M13 18h1"></path>
+      <path d="M13 9h4"></path>
+      <path d="M13 6h1"></path>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.htm"><div class="brand">Pegasus  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.htm">
+  
+  
+  <span class="sidebar-brand-text">Pegasus  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.htm">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.htm">Customizations</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Settings and Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code-structure/index.htm">Pegasus’s Code Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using-virtualenvs/index.htm">Using Virtual Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-end/index.htm">The Front End</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/index.htm">CSS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/overview/index.htm">Choosing a CSS Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/file-structure/index.htm">CSS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/pegasus-css/index.htm">Pegasus CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/tailwind/index.htm">Tailwind CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/bootstrap/index.htm">Bootstrap (and Material)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/bulma/index.htm">Bulma</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../page-metadata/index.htm">Project/Page Metadata and SEO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.htm">Using Docker in Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../teams/index.htm">Using Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subscriptions/index.htm">Subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../payments/index.htm">E-Commerce / Payments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../forms/index.htm">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.htm">APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internationalization/index.htm">Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wagtail/index.htm">Wagtail CMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flags/index.htm">Feature Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../celery/index.htm">Celery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../async/index.htm">Async and Websocket Support</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../deployment/index.htm">Deployment</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/overview/index.htm">Deployment Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/overview/index.htm#officially-supported-platforms">Officially supported platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/heroku/index.htm">Heroku</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/fly/index.htm">Fly.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/render/index.htm">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/digital-ocean/index.htm">Digital Ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/google-cloud/index.htm">Google Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/production-checklist/index.htm">Production checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/troubleshooting/index.htm">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../github-actions/index.htm">Using Github Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbooks/index.htm">Cookbooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.htm">Upgrading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.htm">Version History and Release Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="settings-and-configuration">
+<h1>Settings and Configuration<a class="headerlink" href="#settings-and-configuration" title="Permalink to this heading">#</a></h1>
+<p>This section describes some of the settings and configuration details you can change inside Pegasus.</p>
+<section id="settings-and-environment-files">
+<h2>Settings and environment files<a class="headerlink" href="#settings-and-environment-files" title="Permalink to this heading">#</a></h2>
+<p>Pegasus uses environment variables and <code class="docutils literal notranslate"><span class="pre">django-environ</span></code> to manage settings.
+You <em>can</em> modify values directly in <code class="docutils literal notranslate"><span class="pre">settings.py</span></code>, but the recommended way to modify any setting
+that varies across environments is to use a <code class="docutils literal notranslate"><span class="pre">.env</span></code> file.</p>
+<p>Out-of-the-box, Pegasus will include multiple <code class="docutils literal notranslate"><span class="pre">.env</span></code> files for your settings:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">.env</span></code> is for a native Python environment.</strong>
+It will be picked up by default if you run <code class="docutils literal notranslate"><span class="pre">./manage.py</span> <span class="pre">runserver</span></code>.
+It is typically not checked into source control (since it may include secrets like API keys),
+so is included in the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code>.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">.env.docker</span></code> is for a Docker-based environment.</strong>
+It will override anything set in <code class="docutils literal notranslate"><span class="pre">.env</span></code> if you run with docker.
+It is also typically not checked into source control, so is ignored.</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">.env.example</span></code> is an example file.</strong>
+It is not used for anything, but can be checked into source control so that
+developers can use it as a starting point for their <code class="docutils literal notranslate"><span class="pre">.env</span></code> or <code class="docutils literal notranslate"><span class="pre">.env.docker</span></code> files.</p>
+<p>Newly downloaded projects will include a <code class="docutils literal notranslate"><span class="pre">.env</span></code> and <code class="docutils literal notranslate"><span class="pre">.env.docker</span></code> file, but projects
+pulled from git will typically only include a <code class="docutils literal notranslate"><span class="pre">.env.example</span></code> file.</p>
+<p><em>Note: Pegasus versions prior to 2023.1 may not include all of these files.</em></p>
+<section id="settings-environment-precedence">
+<h3>Settings environment precedence<a class="headerlink" href="#settings-environment-precedence" title="Permalink to this heading">#</a></h3>
+<p>Most settings are configured in the form:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SOME_VALUE</span> <span class="o">=</span> <span class="n">env</span><span class="p">(</span><span class="s1">&#39;SOME_VALUE&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As mentioned above, <em>it is recommended to set these values in your environment / <code class="docutils literal notranslate"><span class="pre">.env</span></code> file</em>,
+which will always work as expected.</p>
+<p>The environment takes precedence over the default if it’s set—even if it is set to an empty value.
+This can lead to confusing behavior.</p>
+<p>For example, if in your <code class="docutils literal notranslate"><span class="pre">.env</span></code> file you have this line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SOME_VALUE</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+<p>And in your <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> you provide a default:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SOME_VALUE</span> <span class="o">=</span> <span class="n">env</span><span class="p">(</span><span class="s1">&#39;SOME_VALUE&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;my value&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The default will be ignored, and <code class="docutils literal notranslate"><span class="pre">SOME_VALUE</span></code> will be an empty string.</p>
+<p>To fix this, either <em>remove the value entirely from your <code class="docutils literal notranslate"><span class="pre">.env</span></code> file</em>,
+or <em>explicitly set the value in your <code class="docutils literal notranslate"><span class="pre">settings.py</span></code></em> (instead of using the <code class="docutils literal notranslate"><span class="pre">default</span></code> argument).
+E.g.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SOME_VALUE</span> <span class="o">=</span> <span class="s1">&#39;my value&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="project-metadata">
+<h2>Project Metadata<a class="headerlink" href="#project-metadata" title="Permalink to this heading">#</a></h2>
+<p>When you first setup Pegasus it populated the <code class="docutils literal notranslate"><span class="pre">PROJECT_METADATA</span></code> setting in <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> with various
+things like page titles and social sharing information.</p>
+<p>These settings can later be changed as you like by editing the setting directly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">PROJECT_METADATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="s1">&#39;Your Project Name&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;URL&#39;</span><span class="p">:</span> <span class="s1">&#39;http://www.example.com&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;DESCRIPTION&#39;</span><span class="p">:</span> <span class="s1">&#39;My Amazing SaaS Application&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;IMAGE&#39;</span><span class="p">:</span> <span class="s1">&#39;https://upload.wikimedia.org/wikipedia/commons/2/20/PEO-pegasus_black.svg&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;KEYWORDS&#39;</span><span class="p">:</span> <span class="s1">&#39;SaaS, django&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;CONTACT_EMAIL&#39;</span><span class="p">:</span> <span class="s1">&#39;you@example.com&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>See the <a class="reference internal" href="../page-metadata/index.htm"><span class="doc std std-doc">project metadata documentation</span></a> for more information about how this is used.</p>
+</section>
+<section id="absolute-urls">
+<h2>Absolute URLs<a class="headerlink" href="#absolute-urls" title="Permalink to this heading">#</a></h2>
+<p>In most of Django/Pegasus, URLs are <em>relative</em>, represented as paths like <code class="docutils literal notranslate"><span class="pre">/account/login/</span></code> and so forth.
+But in some cases you need a complete URL, including the <em>protocol</em> (http vs https) and <em>server</em> (e.g. www.example.com).
+These are necessary whenever you use a link in an email, with an external site (e.g. Stripe API callbacks and social authentication),
+and in some places when APIs are accessed from your front end.</p>
+<section id="setting-your-site-s-protocol">
+<h3>Setting your site’s protocol<a class="headerlink" href="#setting-your-site-s-protocol" title="Permalink to this heading">#</a></h3>
+<p>The <em>protocol</em> is configured by the <code class="docutils literal notranslate"><span class="pre">USE_HTTPS_IN_ABSOLUTE_URLS</span></code> variable in <code class="docutils literal notranslate"><span class="pre">settings.py</span></code>.
+You should set this to <code class="docutils literal notranslate"><span class="pre">True</span></code> when using https and <code class="docutils literal notranslate"><span class="pre">False</span></code> when not (typically only in development).</p>
+</section>
+<section id="setting-your-server-url">
+<h3>Setting your server URL<a class="headerlink" href="#setting-your-server-url" title="Permalink to this heading">#</a></h3>
+<p>When you first install Pegasus it will use the <code class="docutils literal notranslate"><span class="pre">URL</span></code> value from <code class="docutils literal notranslate"><span class="pre">PROJECT_METADATA</span></code> above to create
+a Django <code class="docutils literal notranslate"><span class="pre">Site</span></code> object in your database.
+The domain name of this <code class="docutils literal notranslate"><span class="pre">Site</span></code> will be used for your server address.</p>
+<p>If you need to change the URL after installation, you can go to the site admin at <code class="docutils literal notranslate"><span class="pre">admin/sites/site/</span></code> and
+modify the values accordingly, leaving off any http/https prefix.</p>
+<p>In development you’ll typically want a domain name of <code class="docutils literal notranslate"><span class="pre">localhost:8000</span></code>, and in production this should
+be the domain where your users access your app.</p>
+<p><strong>Example Development Configuration</strong></p>
+<p><img alt="Development Site Settings" src="../_images/site-admin-dev.png"></p>
+<p><strong>Example Production Configuration</strong></p>
+<p><img alt="Site Settings" src="../_images/site-admin.png"></p>
+</section>
+</section>
+<section id="sending-email">
+<h2>Sending Email<a class="headerlink" href="#sending-email" title="Permalink to this heading">#</a></h2>
+<p>Pegasus is setup to use <a class="reference external" href="https://github.com/anymail/django-anymail">django-anymail</a> to send email
+via Amazon SES, Mailgun, Postmark, and a variety of other email providers.</p>
+<p>To use one of these email backends, change the the email backend in <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;anymail.backends.mailgun.EmailBackend&#39;</span>
+</pre></div>
+</div>
+<p>And populate the <code class="docutils literal notranslate"><span class="pre">ANYMAIL</span></code> setting with the required information. For example, to use <a class="reference external" href="https://www.mailgun.com/">Mailgun</a>
+you’d populate the following values:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ANYMAIL</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;MAILGUN_API_KEY&quot;</span><span class="p">:</span> <span class="s2">&quot;key-****&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MAILGUN_SENDER_DOMAIN&quot;</span><span class="p">:</span> <span class="s1">&#39;mg.{{project_name}}.com&#39;</span><span class="p">,</span>  <span class="c1"># should match what&#39;s in mailgun</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>If you are in the EU you may also need to add the following entry:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="s1">&#39;MAILGUN_API_URL&#39;</span><span class="p">:</span> <span class="s1">&#39;https://api.eu.mailgun.net/v3&#39;</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://anymail.readthedocs.io/en/stable/">anymail documentation</a> has much more information on these options.</p>
+<p>The following django settings should also be set:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SERVER_EMAIL</span> <span class="o">=</span> <span class="s1">&#39;noreply@{{project_name}}.com&#39;</span>
+<span class="n">DEFAULT_FROM_EMAIL</span> <span class="o">=</span> <span class="s1">&#39;you@{{project_name}.com&#39;</span>
+<span class="n">ADMINS</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;Your Name&#39;</span><span class="p">,</span> <span class="s1">&#39;you@{{project_name}}.com&#39;</span><span class="p">),]</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://docs.djangoproject.com/en/3.2/topics/email/">Sending email</a> in the django docs for more information.</p>
+</section>
+<section id="user-sign-up">
+<h2>User Sign Up<a class="headerlink" href="#user-sign-up" title="Permalink to this heading">#</a></h2>
+<p>The sign up workflow is managed by <a class="reference external" href="https://www.intenct.nl/projects/django-allauth/">django-allauth</a>
+with a sensible set of defaults and templates.</p>
+<section id="social-logins">
+<h3>Social logins<a class="headerlink" href="#social-logins" title="Permalink to this heading">#</a></h3>
+<p>Pegasus optionally ships with a “Login with Google” and “Login with Twitter” options.</p>
+<p>You’ll separately need to follow the steps <a class="reference external" href="https://django-allauth.readthedocs.io/en/latest/socialaccount/providers/index.html">listed here</a>
+to configure things on the Google/Twitter side and in the Django Admin.</p>
+<p>It’s easy to add or change social login details (e.g. login with Facebook, Github, etc.) using allauth.</p>
+<p>For details on how to set this up for a particular provider <a class="reference external" href="https://django-allauth.readthedocs.io/en/latest/socialaccount/providers/index.html">see this page</a>.</p>
+<p>If you need help setting this up feel free to get in touch!</p>
+</section>
+<section id="requiring-email-confirmation">
+<h3>Requiring email confirmation<a class="headerlink" href="#requiring-email-confirmation" title="Permalink to this heading">#</a></h3>
+<p>Pegasus does not require users to confirm their email addresses prior to logging in.
+However, this can be easily changed by changing the following value in <code class="docutils literal notranslate"><span class="pre">settings.py</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ACCOUNT_EMAIL_VERIFICATION</span> <span class="o">=</span> <span class="s1">&#39;optional&#39;</span>  <span class="c1"># change to &quot;mandatory&quot; to require users to confirm email before signing in.</span>
+</pre></div>
+</div>
+<p><em>Note: The email verification step will be skipped if using a social login.</em></p>
+</section>
+<section id="customizing-emails">
+<h3>Customizing emails<a class="headerlink" href="#customizing-emails" title="Permalink to this heading">#</a></h3>
+<p>Pegasus ships with simple, responsive email templates for password reset and email address confirmation.
+These templates can be further customized by editing the files in the <code class="docutils literal notranslate"><span class="pre">templates/account/email</span></code> directory.</p>
+<p>See <a class="reference external" href="https://django-allauth.readthedocs.io/en/latest/common/index.html#sending-email">the allauth email documentation</a> for more information about customizing account emails.</p>
+</section>
+<section id="disabling-public-sign-ups">
+<h3>Disabling public sign ups<a class="headerlink" href="#disabling-public-sign-ups" title="Permalink to this heading">#</a></h3>
+<p>If you’d like to prevent everyone from signing up for your app, set the following in your <code class="docutils literal notranslate"><span class="pre">settings.py</span></code>,
+replacing the existing value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ACCOUNT_ADAPTER</span> <span class="o">=</span> <span class="s1">&#39;apps.users.adapter.NoNewUsersAccountAdapter&#39;</span>
+</pre></div>
+</div>
+<p>This will prevent all users from creating new accounts, though existing users can continue to login and use the app.</p>
+</section>
+<section id="further-configuration">
+<h3>Further configuration<a class="headerlink" href="#further-configuration" title="Permalink to this heading">#</a></h3>
+<p>Allauth is highly configurable.
+It’s recommended that you look into the various <a class="reference external" href="https://django-allauth.readthedocs.io/en/latest/account/configuration.html">configuration settings available within allauth</a>
+for any advanced customization.</p>
+</section>
+</section>
+<section id="stripe">
+<h2>Stripe<a class="headerlink" href="#stripe" title="Permalink to this heading">#</a></h2>
+<p>If you’re using <a class="reference external" href="https://www.stripe.com/">Stripe</a> to collect payments you’ll need to fill in the following in <code class="docutils literal notranslate"><span class="pre">settings.py</span></code>
+(or populate them in the appropriate environment variables):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">STRIPE_LIVE_PUBLIC_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;STRIPE_LIVE_PUBLIC_KEY&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;your publishable key&gt;&quot;</span><span class="p">)</span>
+<span class="n">STRIPE_LIVE_SECRET_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;STRIPE_LIVE_SECRET_KEY&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;your secret key&gt;&quot;</span><span class="p">)</span>
+<span class="n">STRIPE_TEST_PUBLIC_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;STRIPE_TEST_PUBLIC_KEY&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;your publishable key&gt;&quot;</span><span class="p">)</span>
+<span class="n">STRIPE_TEST_SECRET_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;STRIPE_TEST_SECRET_KEY&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;your secret key&gt;&quot;</span><span class="p">)</span>
+<span class="n">STRIPE_LIVE_MODE</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Change to True in production</span>
+</pre></div>
+</div>
+</section>
+<section id="google-analytics">
+<h2>Google Analytics<a class="headerlink" href="#google-analytics" title="Permalink to this heading">#</a></h2>
+<p>To enable Google Analytics, add your analytics tracking ID to your <code class="docutils literal notranslate"><span class="pre">.env</span></code> file or <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">GOOGLE_ANALYTICS_ID</span> <span class="o">=</span> <span class="s1">&#39;UA-XXXXXXX-1&#39;</span> 
+</pre></div>
+</div>
+<p>Pegasus uses a “global site tag” with gtag.js by default, which is a simpler version of Google Analytics that can be rolled out
+with zero additional configuration.
+If you use Google Tag Manager, you can make changes in <code class="docutils literal notranslate"><span class="pre">templates/web/components/google_analytics.html</span></code> to
+match the snippet provided by Google.</p>
+<p>See <a class="reference external" href="https://support.google.com/tagmanager/answer/7582054">this article</a> for more on the differences between
+gtag.js and Google Tag Manager.</p>
+</section>
+<section id="sentry">
+<h2>Sentry<a class="headerlink" href="#sentry" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://sentry.io/">Sentry</a> is the gold standard for tracking errors in Django applications and
+Pegasus can connect to it with a few lines of configuration.</p>
+<p>If you build with Sentry enabled, all you need to do is populate the <code class="docutils literal notranslate"><span class="pre">SENTRY_DSN</span></code> setting - either
+directly in your <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> or via an environment variable.</p>
+<p>After setting it up on production, you can test your Sentry integration by visiting <code class="docutils literal notranslate"><span class="pre">https://&lt;yourdomain&gt;/simulate_error</span></code>.
+This should trigger an exception which will be logged by Sentry.</p>
+</section>
+<section id="openai">
+<h2>OpenAI<a class="headerlink" href="#openai" title="Permalink to this heading">#</a></h2>
+<p>To use the built-in OpenAI examples (version 2023.3.3 and later) you will need to set <code class="docutils literal notranslate"><span class="pre">OPENAI_API_KEY</span></code> in
+your settings or environment.
+See <a class="reference external" href="https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key">this page</a> for help
+finding your OpenAI API key.</p>
+</section>
+<section id="celery">
+<h2>Celery<a class="headerlink" href="#celery" title="Permalink to this heading">#</a></h2>
+<p>See the <a class="reference internal" href="../celery/index.htm"><span class="doc std std-doc">celery docs</span></a> for set up and configuration of Celery.</p>
+</section>
+<section id="mailing-list">
+<h2>Mailing List<a class="headerlink" href="#mailing-list" title="Permalink to this heading">#</a></h2>
+<p>Pegasus includes support for subscribing users to a marketing email list upon signup.
+Currently, three platforms are supported:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://mailchimp.com/">Mailchimp</a></p></li>
+<li><p><a class="reference external" href="https://convertkit.com/">ConvertKit</a></p></li>
+<li><p><a class="reference external" href="https://emailoctopus.com/">Email Octopus</a></p></li>
+</ol>
+<p>Make sure you choose the platform you would like to use when building your Pegasus project.</p>
+<p>Then follow the instructions below for the platform you’ve chosen.
+After completing these steps, new sign-ups will automatically be added to your configured marketing list.
+Note that it is your responsibility to notify your users / get their consent as per your local privacy regulations.</p>
+<section id="mailchimp">
+<h3>Mailchimp<a class="headerlink" href="#mailchimp" title="Permalink to this heading">#</a></h3>
+<p>To enable the Mailchimp integration, first create a mailing list,
+then fill in the following to values in your environment/settings.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MAILCHIMP_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;&lt;Api Key&gt;&#39;</span>
+<span class="n">MAILCHIMP_LIST_ID</span> <span class="o">=</span> <span class="s1">&#39;&lt;List ID&gt;&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="convertkit">
+<h3>ConvertKit<a class="headerlink" href="#convertkit" title="Permalink to this heading">#</a></h3>
+<p>To enable the ConvertKit integration, first create a form,
+then fill in the following values in your environment/settings.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">CONVERT_KIT_API_KEY</span> <span class="o">=</span> <span class="s2">&quot;&lt;Api Key&gt;&quot;</span>
+<span class="n">CONVERT_KIT_FORM_ID</span> <span class="o">=</span> <span class="s2">&quot;&lt;Form Id&gt;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="email-octopus">
+<h3>Email Octopus<a class="headerlink" href="#email-octopus" title="Permalink to this heading">#</a></h3>
+<p>To enable the Email Octopus integration, first create a mailing list,
+then fill in the following values in your environment/settings.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EMAIL_OCTOPUS_API_KEY</span> <span class="o">=</span> <span class="s2">&quot;&lt;Api Key&gt;&quot;</span>
+<span class="n">EMAIL_OCTOPUS_LIST_ID</span> <span class="o">=</span> <span class="s2">&quot;&lt;List ID&gt;&quot;</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this heading">#</a></h2>
+<p>Pegasus ships with a default Django log configuration which outputs logs to the console as follows:</p>
+<ul class="simple">
+<li><p>Django log messages at level INFO and above</p></li>
+<li><p>Pegasus log messages at level INFO and above</p></li>
+</ul>
+<p>The Pegasus loggers are all namespaced with the project name e.g. <code class="docutils literal notranslate"><span class="pre">{{project_name}}.subscriptions</span></code>.</p>
+<section id="changing-log-levels">
+<h3>Changing log levels<a class="headerlink" href="#changing-log-levels" title="Permalink to this heading">#</a></h3>
+<p>There are two environment variables which can be used to control the log levels of either Django messages
+or Pegasus message:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DJANGO_LOG_LEVEL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{{project_name.upper()}}_LOG_LEVEL</span></code></p></li>
+</ul>
+<p>Alternatively the entire log configuration can be overridden using the <code class="docutils literal notranslate"><span class="pre">LOGGING</span></code> setting as described in the
+<a class="reference external" href="https://docs.djangoproject.com/en/4.0/topics/logging/">Django docs</a>.</p>
+</section>
+</section>
+<section id="storing-media-files">
+<h2>Storing media files<a class="headerlink" href="#storing-media-files" title="Permalink to this heading">#</a></h2>
+<p>SaaS Pegasus ships with optional configuration for storing dynamic media files in S3 e.g. user profile pictures.
+If you do not have this enabled the <a class="reference external" href="https://docs.djangoproject.com/en/4.1/topics/files/">default Django configuration</a> will be used which requires
+you to have persistent storage available for your site such as a Docker volume.</p>
+<section id="setting-up-s3-media-storage">
+<h3>Setting up S3 media storage<a class="headerlink" href="#setting-up-s3-media-storage" title="Permalink to this heading">#</a></h3>
+<p>This section assumes you have set up your SaaS Pegasus project with the <strong>S3 media file storage</strong> enabled.</p>
+<p>In order to use S3 for media storage you will need to create an S3 bucket and provide authentication
+credentials for writing data to the bucket.</p>
+<p>Once you have done the S3 setup (see below), you can update your <code class="docutils literal notranslate"><span class="pre">.env</span></code> file as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">USE_S3_MEDIA</span><span class="o">=</span><span class="kc">True</span>
+<span class="n">AWS_ACCESS_KEY_ID</span><span class="o">=&lt;</span><span class="n">IAM</span> <span class="n">user</span><span class="s1">&#39;s access key&gt;</span>
+<span class="n">AWS_SECRET_ACCESS_KEY</span><span class="o">=&lt;</span><span class="n">IAM</span> <span class="n">user</span><span class="s1">&#39;s secret key&gt;</span>
+</pre></div>
+</div>
+<p>With this configuration your media files will be accessible at
+<code class="docutils literal notranslate"><span class="pre">https://{{</span> <span class="pre">project_name</span> <span class="pre">}}-media.s3.amazonaws.com/media/</span></code>.</p>
+<p><a class="reference external" href="https://testdriven.io/blog/storing-django-static-and-media-files-on-amazon-s3/">This guide</a> is an excellent resource with step-by-step instructions for the S3
+setup.</p>
+<section id="additional-settings">
+<h4>Additional settings<a class="headerlink" href="#additional-settings" title="Permalink to this heading">#</a></h4>
+<p>AWS_STORAGE_BUCKET_NAME
+: Name of the S3 bucket to use. Defaults to <code class="docutils literal notranslate"><span class="pre">{{project_name}}-media</span></code>.</p>
+<p>AWS_S3_CUSTOM_DOMAIN
+: Name of the AWS custom domain name. Defaults to <code class="docutils literal notranslate"><span class="pre">{{project_name}}-media</span></code>.</p>
+</section>
+</section>
+<section id="alternative-storage-backends">
+<h3>Alternative storage backends<a class="headerlink" href="#alternative-storage-backends" title="Permalink to this heading">#</a></h3>
+<p>Should you wish to use a different storage backed e.g. <a class="reference external" href="https://www.digitalocean.com/products/spaces">Digital Ocean Spaces</a>
+you can follow the setup described in the <a class="reference external" href="https://django-storages.readthedocs.io/en/latest/index.html">django-storages</a> documentation.</p>
+</section>
+</section>
+<section id="django-debug-toolbar">
+<h2>Django Debug Toolbar<a class="headerlink" href="#django-debug-toolbar" title="Permalink to this heading">#</a></h2>
+<p>Pegasus ships with <a class="reference external" href="https://github.com/jazzband/django-debug-toolbar#readme">Django Debug Toolbar</a>
+as an optional package. This section describes how the feature is configured in Pegasus.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">django-debug-toolbar</span></code> package is placed in the <code class="docutils literal notranslate"><span class="pre">dev-requirements.txt</span></code> file which means it will only
+be available in dev environments. Should you wish to use it in a production environment you will need
+to add it to your <code class="docutils literal notranslate"><span class="pre">prod-requirements.in</span></code> file and <span class="xref myst">re-build</span> your <code class="docutils literal notranslate"><span class="pre">prod-requirements.txt</span></code> file.</p>
+<p>By default, the toolbar is enabled in development environments via the <code class="docutils literal notranslate"><span class="pre">ENABLE_DEBUG_TOOLBAR</span></code> setting
+in your <code class="docutils literal notranslate"><span class="pre">.env</span></code> file(s). You can change this setting in any environment to turn it on/off.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ENABLE_DEBUG_TOOLBAR</span><span class="o">=</span><span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../code-structure/index.htm">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Pegasus’s Code Structure</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../customizations/index.htm">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Customizations</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Cory Zue
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Settings and Configuration</a><ul>
+<li><a class="reference internal" href="#settings-and-environment-files">Settings and environment files</a><ul>
+<li><a class="reference internal" href="#settings-environment-precedence">Settings environment precedence</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#project-metadata">Project Metadata</a></li>
+<li><a class="reference internal" href="#absolute-urls">Absolute URLs</a><ul>
+<li><a class="reference internal" href="#setting-your-site-s-protocol">Setting your site’s protocol</a></li>
+<li><a class="reference internal" href="#setting-your-server-url">Setting your server URL</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sending-email">Sending Email</a></li>
+<li><a class="reference internal" href="#user-sign-up">User Sign Up</a><ul>
+<li><a class="reference internal" href="#social-logins">Social logins</a></li>
+<li><a class="reference internal" href="#requiring-email-confirmation">Requiring email confirmation</a></li>
+<li><a class="reference internal" href="#customizing-emails">Customizing emails</a></li>
+<li><a class="reference internal" href="#disabling-public-sign-ups">Disabling public sign ups</a></li>
+<li><a class="reference internal" href="#further-configuration">Further configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stripe">Stripe</a></li>
+<li><a class="reference internal" href="#google-analytics">Google Analytics</a></li>
+<li><a class="reference internal" href="#sentry">Sentry</a></li>
+<li><a class="reference internal" href="#openai">OpenAI</a></li>
+<li><a class="reference internal" href="#celery">Celery</a></li>
+<li><a class="reference internal" href="#mailing-list">Mailing List</a><ul>
+<li><a class="reference internal" href="#mailchimp">Mailchimp</a></li>
+<li><a class="reference internal" href="#convertkit">ConvertKit</a></li>
+<li><a class="reference internal" href="#email-octopus">Email Octopus</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#logging">Logging</a><ul>
+<li><a class="reference internal" href="#changing-log-levels">Changing log levels</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#storing-media-files">Storing media files</a><ul>
+<li><a class="reference internal" href="#setting-up-s3-media-storage">Setting up S3 media storage</a><ul>
+<li><a class="reference internal" href="#additional-settings">Additional settings</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alternative-storage-backends">Alternative storage backends</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#django-debug-toolbar">Django Debug Toolbar</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script type="module" src="../scriv-chat%400.0.5/dist/scriv-chat/scriv-chat.esm.js"></script>
+    
+<scriv-chat style="position:fixed; right: 20px; bottom: 20px;" visible="false" team="pegasus" bot="pegasus-docs" button-text="Ask a question"></scriv-chat>
+</body>
+</html>

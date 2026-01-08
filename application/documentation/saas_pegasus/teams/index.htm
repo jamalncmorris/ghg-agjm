@@ -1,0 +1,477 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+        <script async="" src="../gtag/js?id=UA-94102737-10"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-94102737-10');
+            
+        </script>
+    <link rel="index" title="Index" href="../genindex/index.htm"><link rel="search" title="Search" href="../search/index.htm"><link rel="next" title="Subscriptions" href="../subscriptions/index.htm"><link rel="prev" title="Using Docker in Development" href="../docker/index.htm">
+        <link rel="canonical" href="index.htm">
+
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1">
+        <title>Using Teams - Pegasus documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89">
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e">
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewbox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewbox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewbox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewbox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewbox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewbox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M13 12h5"></path>
+      <path d="M13 15h4"></path>
+      <path d="M13 18h1"></path>
+      <path d="M13 9h4"></path>
+      <path d="M13 6h1"></path>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.htm"><div class="brand">Pegasus  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.htm">
+  
+  
+  <span class="sidebar-brand-text">Pegasus  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.htm">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.htm">Customizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.htm">Settings and Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code-structure/index.htm">Pegasus’s Code Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using-virtualenvs/index.htm">Using Virtual Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-end/index.htm">The Front End</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/index.htm">CSS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/overview/index.htm">Choosing a CSS Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/file-structure/index.htm">CSS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/pegasus-css/index.htm">Pegasus CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/tailwind/index.htm">Tailwind CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/bootstrap/index.htm">Bootstrap (and Material)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/bulma/index.htm">Bulma</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../page-metadata/index.htm">Project/Page Metadata and SEO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docker/index.htm">Using Docker in Development</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Using Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subscriptions/index.htm">Subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../payments/index.htm">E-Commerce / Payments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../forms/index.htm">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.htm">APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internationalization/index.htm">Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wagtail/index.htm">Wagtail CMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flags/index.htm">Feature Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../celery/index.htm">Celery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../async/index.htm">Async and Websocket Support</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../deployment/index.htm">Deployment</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/overview/index.htm">Deployment Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/overview/index.htm#officially-supported-platforms">Officially supported platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/heroku/index.htm">Heroku</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/fly/index.htm">Fly.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/render/index.htm">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/digital-ocean/index.htm">Digital Ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/google-cloud/index.htm">Google Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/production-checklist/index.htm">Production checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/troubleshooting/index.htm">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../github-actions/index.htm">Using Github Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbooks/index.htm">Cookbooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.htm">Upgrading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.htm">Version History and Release Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="using-teams">
+<h1>Using Teams<a class="headerlink" href="#using-teams" title="Permalink to this heading">#</a></h1>
+<p>Teams are designed to provide sandboxes for groups of users collaborating on single project.
+Users can join one or more teams, invite other users to their teams, and give different team members different roles.</p>
+<p>Pegasus provides the building blocks to setup a team-based application.
+Some of those building blocks are documented here.</p>
+<p><strong>Note: all of the following examples assume you have setup Pegasus with teams enabled.</strong></p>
+<section id="example-app">
+<h2>Example App<a class="headerlink" href="#example-app" title="Permalink to this heading">#</a></h2>
+<p>As of version 0.17, Pegasus ships with a built-in example application demonstrating the basics of working with team-based
+models and views.</p>
+<p>The example app includes:</p>
+<ol class="arabic simple">
+<li><p>A data model that belongs to a team.</p></li>
+<li><p>A set of class based views for working with that data model, limited to the context of a team.</p></li>
+</ol>
+<section id="third-party-examples">
+<h3>Third party examples<a class="headerlink" href="#third-party-examples" title="Permalink to this heading">#</a></h3>
+<p>A Pegasus user Peter Cherna has created some more <a class="reference external" href="https://github.com/pcherna/pegasus-example-apps/">example applications</a>
+that demonstrate additional team-based examples, including functional views, pagination, APIs and working with “global” objects.</p>
+<p>They are a great place to start for inspiration and getting something up and running quickly!</p>
+<p><em>Note: the example apps are not officially sanctioned/supported by Pegasus—though
+features from them will be continually incorporated into future releases.</em></p>
+</section>
+</section>
+<section id="data-models">
+<h2>Data Models<a class="headerlink" href="#data-models" title="Permalink to this heading">#</a></h2>
+<p>Teams use three primary models - <code class="docutils literal notranslate"><span class="pre">apps.users.CustomUser</span></code>, <code class="docutils literal notranslate"><span class="pre">apps.teams.Team</span></code>, and <code class="docutils literal notranslate"><span class="pre">apps.teams.Membership</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Membership</span></code> model uses <a class="reference external" href="https://docs.djangoproject.com/en/3.2/ref/models/fields/#django.db.models.ManyToManyField.through">Django’s “through” support</a>
+to extend the <code class="docutils literal notranslate"><span class="pre">User</span></code>/<code class="docutils literal notranslate"><span class="pre">Team</span></code> relationship with additional fields.</p>
+<p>By default, a <code class="docutils literal notranslate"><span class="pre">role</span></code> field is added to represent the <code class="docutils literal notranslate"><span class="pre">User</span></code>’s role in the <code class="docutils literal notranslate"><span class="pre">Team</span></code> (admin or member).</p>
+<section id="team-based-models">
+<h3>Team-based models<a class="headerlink" href="#team-based-models" title="Permalink to this heading">#</a></h3>
+<p>Data models that “belong” to a Team can subclass <code class="docutils literal notranslate"><span class="pre">BaseTeamModel</span></code>.
+See the example app for usage.</p>
+</section>
+</section>
+<section id="team-based-views">
+<h2>Team-based Views<a class="headerlink" href="#team-based-views" title="Permalink to this heading">#</a></h2>
+<p>At its core, all Team-based views need the following:</p>
+<section id="urls">
+<h3>Urls<a class="headerlink" href="#urls" title="Permalink to this heading">#</a></h3>
+<p>See <code class="docutils literal notranslate"><span class="pre">apps.team.urls</span></code> for an example of how to set these up in your apps, and
+your main <code class="docutils literal notranslate"><span class="pre">apps.{project}.urls</span></code> file for how to add them to your site’s URLs.</p>
+<p>Anything that goes into <code class="docutils literal notranslate"><span class="pre">team_urlpatterns</span></code> in <code class="docutils literal notranslate"><span class="pre">apps.{project}.urls</span></code> will automatically be added under the
+URL <code class="docutils literal notranslate"><span class="pre">https://example.com/a/&lt;team_slug&gt;/</span></code>. The <code class="docutils literal notranslate"><span class="pre">team_slug</span></code> is a human-readable, URL-friendly version
+of the team name that is auto-generated for you.</p>
+</section>
+<section id="middleware">
+<h3>Middleware<a class="headerlink" href="#middleware" title="Permalink to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">apps.teams.middleware.TeamsMiddleware</span></code> must be included in the list of middleware. It must be placed
+after <code class="docutils literal notranslate"><span class="pre">django.contrib.auth.middleware.AuthenticationMiddleware</span></code>. The purpose of this middleware is to
+set <code class="docutils literal notranslate"><span class="pre">request.team</span></code> and <code class="docutils literal notranslate"><span class="pre">request.team_membership</span></code> based on the current request. It will attempt to load
+the team as follows:</p>
+<ul class="simple">
+<li><p>From the <code class="docutils literal notranslate"><span class="pre">team_slug</span></code> in the request path if available</p></li>
+<li><p>From the the current session if available</p></li>
+<li><p>From the user’s list of teams if available</p></li>
+</ul>
+<p>If the <code class="docutils literal notranslate"><span class="pre">team_slug</span></code> is available from the request path but it does not match a team that the user has access to
+then the request will terminate with a 404. Apart from this the middleware does not do any validation of the
+team or the team membership. That is left to the decorators described below.</p>
+</section>
+<section id="views">
+<h3>Views<a class="headerlink" href="#views" title="Permalink to this heading">#</a></h3>
+<p>See <code class="docutils literal notranslate"><span class="pre">apps.team.views</span></code> for example team views.
+All views that are referenced under <code class="docutils literal notranslate"><span class="pre">team_urlpatterns</span></code> must contain <code class="docutils literal notranslate"><span class="pre">team_slug</span></code> as the first argument.</p>
+<p>In addition to adding this field, you will likely want to use one of the built-in permission
+decorators (see below) to ensure the logged-in user can access the selected team.</p>
+<p>Additionally, you will have to scope any data model access to the relevant Team
+in any Database/ORM queries you make inside your views.</p>
+</section>
+<section id="permission-control">
+<h3>Permission Control<a class="headerlink" href="#permission-control" title="Permalink to this heading">#</a></h3>
+<p>Pegasus includes two convenience decorators for use in team views.
+These can be found in <code class="docutils literal notranslate"><span class="pre">apps.teams.decorators</span></code>.</p>
+<section id="the-login-and-team-required-decorator">
+<h4>The <code class="docutils literal notranslate"><span class="pre">login_and_team_required</span></code> decorator<a class="headerlink" href="#the-login-and-team-required-decorator" title="Permalink to this heading">#</a></h4>
+<p>This decorator can be used to ensure that the logged in user has access to the team in the view.
+It requires your view takes in a <code class="docutils literal notranslate"><span class="pre">team_slug</span></code>, as in the example views.
+It can be used in functional views like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@login_and_team_required</span>
+<span class="k">def</span> <span class="nf">a_team_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">team_slug</span><span class="p">):</span>
+    <span class="c1"># other view logic here</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;web/my_template.html&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;team&#39;</span><span class="p">:</span> <span class="n">request</span><span class="o">.</span><span class="n">team</span><span class="p">,</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+<p>Or in class-based views like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@method_decorator</span><span class="p">(</span><span class="n">login_and_team_required</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;dispatch&#39;</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">ATeamView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="c1"># other view details go here </span>
+</pre></div>
+</div>
+<p>If the current user does not have access to the team they will see a 404 page.
+If no user is logged in they’ll be redirected to a login view, just like the <code class="docutils literal notranslate"><span class="pre">login_required</span></code> decorator.</p>
+</section>
+<section id="the-team-admin-required-decorator">
+<h4>The <code class="docutils literal notranslate"><span class="pre">team_admin_required</span></code> decorator<a class="headerlink" href="#the-team-admin-required-decorator" title="Permalink to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">team_admin_required</span></code> decorator works just like the <code class="docutils literal notranslate"><span class="pre">login_and_team_required</span></code> decorator, except
+in addition to checking team membership the role is also checked and if the user doesn’t have
+“admin” access they will not be able to access the view.</p>
+</section>
+<section id="the-loginandteamrequiredmixin-and-teamadminrequiredmixin-classes">
+<h4>The <code class="docutils literal notranslate"><span class="pre">LoginAndTeamRequiredMixin</span></code> and <code class="docutils literal notranslate"><span class="pre">TeamAdminRequiredMixin</span></code> classes<a class="headerlink" href="#the-loginandteamrequiredmixin-and-teamadminrequiredmixin-classes" title="Permalink to this heading">#</a></h4>
+<p>These mixins provide the same functionality as the decorators, but are designed to work with Django’s generic
+class-based views. They can be used like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ATeamModelListView</span><span class="p">(</span><span class="n">LoginAndTeamRequiredMixin</span><span class="p">,</span> <span class="n">ListView</span><span class="p">):</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">MyModel</span>
+</pre></div>
+</div>
+<p>See the example app for more details.</p>
+</section>
+</section>
+<section id="template-tags">
+<h3>Template tags<a class="headerlink" href="#template-tags" title="Permalink to this heading">#</a></h3>
+<p>In addition to the decorators, you can also use template tags to check user / team access from a template.</p>
+<p>This can be useful for hiding/showing certain content based on a user’s team role.
+The <code class="docutils literal notranslate"><span class="pre">is_member_of</span></code> filter can be used to check team membership, and the <code class="docutils literal notranslate"><span class="pre">is_admin_of</span></code> filter can be used
+to check if <em>a</em> user is a team admin. For example, the following will show only if the logged in user
+is an admin of the associated team:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>{% load team_tags %}
+{% if team and request.user|is_admin_of:team %}
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You&#39;re an admin of {{team.name}}.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+{% elif team and request.user|is_member_of:team %}
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>You&#39;re a member of {{team.name}}.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+{% else %}
+  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Sorry you don&#39;t have access to {{team.name}}.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+{% endif %}
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../subscriptions/index.htm">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Subscriptions</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../docker/index.htm">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Using Docker in Development</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Cory Zue
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Using Teams</a><ul>
+<li><a class="reference internal" href="#example-app">Example App</a><ul>
+<li><a class="reference internal" href="#third-party-examples">Third party examples</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-models">Data Models</a><ul>
+<li><a class="reference internal" href="#team-based-models">Team-based models</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#team-based-views">Team-based Views</a><ul>
+<li><a class="reference internal" href="#urls">Urls</a></li>
+<li><a class="reference internal" href="#middleware">Middleware</a></li>
+<li><a class="reference internal" href="#views">Views</a></li>
+<li><a class="reference internal" href="#permission-control">Permission Control</a><ul>
+<li><a class="reference internal" href="#the-login-and-team-required-decorator">The <code class="docutils literal notranslate"><span class="pre">login_and_team_required</span></code> decorator</a></li>
+<li><a class="reference internal" href="#the-team-admin-required-decorator">The <code class="docutils literal notranslate"><span class="pre">team_admin_required</span></code> decorator</a></li>
+<li><a class="reference internal" href="#the-loginandteamrequiredmixin-and-teamadminrequiredmixin-classes">The <code class="docutils literal notranslate"><span class="pre">LoginAndTeamRequiredMixin</span></code> and <code class="docutils literal notranslate"><span class="pre">TeamAdminRequiredMixin</span></code> classes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#template-tags">Template tags</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script type="module" src="../scriv-chat%400.0.5/dist/scriv-chat/scriv-chat.esm.js"></script>
+    
+<scriv-chat style="position:fixed; right: 20px; bottom: 20px;" visible="false" team="pegasus" bot="pegasus-docs" button-text="Ask a question"></scriv-chat>
+</body>
+</html>

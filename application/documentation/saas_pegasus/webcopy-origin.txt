@@ -1,0 +1,292 @@
+Uri: https://docs.saaspegasus.com/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/2fa/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\2fa\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/apis/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\apis\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/async/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\async\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/celery/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\celery\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/code-structure/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\code-structure\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/configuration/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\configuration\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/cookbooks/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\cookbooks\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/css/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\css\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/css/bootstrap/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\css\bootstrap\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/css/bulma/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\css\bulma\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/css/file-structure/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\css\file-structure\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/css/overview/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\css\overview\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/css/pegasus-css/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\css\pegasus-css\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/css/tailwind/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\css\tailwind\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/customizations/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\customizations\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/deployment/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\deployment\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/deployment/digital-ocean/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\deployment\digital-ocean\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/deployment/fly/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\deployment\fly\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/deployment/google-cloud/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\deployment\google-cloud\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/deployment/heroku/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\deployment\heroku\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/deployment/overview/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\deployment\overview\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/deployment/production-checklist/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\deployment\production-checklist\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/deployment/render/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\deployment\render\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/deployment/troubleshooting/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\deployment\troubleshooting\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/docker/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\docker\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/experimental
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\experimental.html
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/flags/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\flags\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/forms/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\forms\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/front-end/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\front-end\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/genindex/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\genindex\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/getting-started/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\getting-started\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/github-actions/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\github-actions\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/index.html
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\index.html
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/internationalization/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\internationalization\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/page-metadata/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\page-metadata\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/payments/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\payments\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/release-notes/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\release-notes\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/search/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\search\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/searchindex.js
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\searchindex.js
+Content Type: application/javascript
+
+Uri: https://docs.saaspegasus.com/subscriptions/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\subscriptions\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/teams/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\teams\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/upgrading/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\upgrading\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/using-virtualenvs/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\using-virtualenvs\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/wagtail/
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\wagtail\index.htm
+Content Type: text/html
+
+Uri: https://docs.saaspegasus.com/_images/bootstrap-home.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\bootstrap-home.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/bulma-home.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\bulma-home.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/js-pipeline-with-django.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\js-pipeline-with-django.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/material-home.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\material-home.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/pegasus-landing-page.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\pegasus-landing-page.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/redoc-api-docs.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\redoc-api-docs.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/running-migrations-do.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\running-migrations-do.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/site-admin-dev.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\site-admin-dev.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/site-admin.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\site-admin.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/stripe-confirmation-page.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\stripe-confirmation-page.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/subscription-example.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\subscription-example.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/subscriptions-config.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\subscriptions-config.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/swagger-api-docs.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\swagger-api-docs.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/tailwind-home.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\tailwind-home.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_images/user-dashboard.png
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_images\user-dashboard.png
+Content Type: image/png
+
+Uri: https://docs.saaspegasus.com/_static/doctools.js
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_static\doctools.js
+Content Type: application/javascript
+
+Uri: https://docs.saaspegasus.com/_static/documentation_options.js
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_static\documentation_options.js
+Content Type: application/javascript
+
+Uri: https://docs.saaspegasus.com/_static/jquery.js
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_static\jquery.js
+Content Type: application/javascript
+
+Uri: https://docs.saaspegasus.com/_static/language_data.js
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_static\language_data.js
+Content Type: application/javascript
+
+Uri: https://docs.saaspegasus.com/_static/pygments.css
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_static\pygments.css
+Content Type: text/css
+
+Uri: https://docs.saaspegasus.com/_static/scripts/furo.js
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_static\scripts\furo.js
+Content Type: application/javascript
+
+Uri: https://docs.saaspegasus.com/_static/searchtools.js
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_static\searchtools.js
+Content Type: application/javascript
+
+Uri: https://docs.saaspegasus.com/_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_static\styles\furo-extensions.css
+Content Type: text/css
+
+Uri: https://docs.saaspegasus.com/_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_static\styles\furo.css
+Content Type: text/css
+
+Uri: https://docs.saaspegasus.com/_static/underscore.js
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_static\underscore.js
+Content Type: application/javascript
+
+Uri: https://docs.saaspegasus.com/_static/_sphinx_javascript_frameworks_compat.js
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\_static\_sphinx_javascript_frameworks_compat.js
+Content Type: application/javascript
+
+Uri: https://unpkg.com/scriv-chat@0.0.5/dist/scriv-chat/scriv-chat.esm.js
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\scriv-chat@0.0.5\dist\scriv-chat\scriv-chat.esm.js
+Content Type: application/javascript
+
+Uri: https://www.googletagmanager.com/gtag/js?id=UA-94102737-10
+File Name: C:\Users\JNCM9\Downloads\saas_pegasus_v2023.10.1\docs.saaspegasus.com\gtag\js
+Content Type: application/javascript
+

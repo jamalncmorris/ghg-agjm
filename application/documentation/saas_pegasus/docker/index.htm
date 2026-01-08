@@ -1,0 +1,459 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+        <script async="" src="../gtag/js?id=UA-94102737-10"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-94102737-10');
+            
+        </script>
+    <link rel="index" title="Index" href="../genindex/index.htm"><link rel="search" title="Search" href="../search/index.htm"><link rel="next" title="Using Teams" href="../teams/index.htm"><link rel="prev" title="Project/Page Metadata and SEO" href="../page-metadata/index.htm">
+        <link rel="canonical" href="index.htm">
+
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1">
+        <title>Using Docker in Development - Pegasus documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89">
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e">
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewbox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewbox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewbox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewbox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewbox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewbox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M13 12h5"></path>
+      <path d="M13 15h4"></path>
+      <path d="M13 18h1"></path>
+      <path d="M13 9h4"></path>
+      <path d="M13 6h1"></path>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.htm"><div class="brand">Pegasus  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.htm">
+  
+  
+  <span class="sidebar-brand-text">Pegasus  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started/index.htm">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../customizations/index.htm">Customizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.htm">Settings and Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../code-structure/index.htm">Pegasus’s Code Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using-virtualenvs/index.htm">Using Virtual Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../front-end/index.htm">The Front End</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../css/index.htm">CSS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../css/overview/index.htm">Choosing a CSS Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/file-structure/index.htm">CSS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/pegasus-css/index.htm">Pegasus CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/tailwind/index.htm">Tailwind CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/bootstrap/index.htm">Bootstrap (and Material)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../css/bulma/index.htm">Bulma</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../page-metadata/index.htm">Project/Page Metadata and SEO</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Using Docker in Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../teams/index.htm">Using Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../subscriptions/index.htm">Subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../payments/index.htm">E-Commerce / Payments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../forms/index.htm">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apis/index.htm">APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internationalization/index.htm">Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wagtail/index.htm">Wagtail CMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../flags/index.htm">Feature Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../celery/index.htm">Celery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../async/index.htm">Async and Websocket Support</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../deployment/index.htm">Deployment</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/overview/index.htm">Deployment Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/overview/index.htm#officially-supported-platforms">Officially supported platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/heroku/index.htm">Heroku</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/fly/index.htm">Fly.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/render/index.htm">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/digital-ocean/index.htm">Digital Ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/google-cloud/index.htm">Google Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/production-checklist/index.htm">Production checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deployment/troubleshooting/index.htm">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../github-actions/index.htm">Using Github Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbooks/index.htm">Cookbooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrading/index.htm">Upgrading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.htm">Version History and Release Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="using-docker-in-development">
+<h1>Using Docker in Development<a class="headerlink" href="#using-docker-in-development" title="Permalink to this heading">#</a></h1>
+<p>Pegasus optionally includes support for <a class="reference external" href="https://www.docker.com/">Docker</a> during development.
+The Docker development setup can also be used as a foundation for deploying to containerized platforms.
+See <a class="reference internal" href="../deployment/index.htm"><span class="doc std std-doc">our deployment page</span></a> for more details.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>You need to install <a class="reference external" href="https://www.docker.com/get-started">Docker</a> prior to setting up your environment.</p>
+<p>Mac users have reported better performance on Docker using <a class="reference external" href="https://orbstack.dev/">OrbStack</a>,
+which is a Docker Desktop alternative optimized for performance.</p>
+<p>Windows users may also need to install a 3rd-party package to run <code class="docutils literal notranslate"><span class="pre">make</span></code> commands.
+The easiest way to do that is via <a class="reference external" href="https://stackoverflow.com/a/57042516/8207">these instructions</a>.</p>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
+<p>First set up your Pegasus project with Docker enabled and using Postgres as a database
+following the <a class="reference internal" href="../getting-started/index.htm"><span class="doc std std-doc">getting started guide</span></a>.</p>
+<section id="enter-the-project-directory">
+<h3>Enter the project directory<a class="headerlink" href="#enter-the-project-directory" title="Permalink to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="p">{{</span> <span class="n">project_name</span> <span class="p">}}</span>
+</pre></div>
+</div>
+</section>
+<section id="run-the-initialization-script">
+<h3>Run the initialization script<a class="headerlink" href="#run-the-initialization-script" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">init</span>
+</pre></div>
+</div>
+<p>This will spin up a database, web worker, celery worker, and Redis broker and create and
+run your database migrations.</p>
+<p>Note: users of older versions of Windows may <a class="reference external" href="https://stackoverflow.com/questions/32127524/how-to-install-and-use-make-in-windows">need to install “make” separately to use it</a>.
+Alternatively, you can just inspect the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> in the repository and run the commands manually
+(e.g. <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span> <span class="pre">up</span> <span class="pre">-d</span></code>).</p>
+</section>
+<section id="load-server">
+<h3>Load server<a class="headerlink" href="#load-server" title="Permalink to this heading">#</a></h3>
+<p>Visit <a class="reference external" href="http://localhost:8000/">http://localhost:8000/</a> in a browser and you
+should be up and running!</p>
+</section>
+</section>
+<section id="using-the-makefile">
+<h2>Using the Makefile<a class="headerlink" href="#using-the-makefile" title="Permalink to this heading">#</a></h2>
+<p>Pegasus ships with a self-documenting <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> that will run common commands for you,
+including starting your containers, performing database operations, and building your front end.</p>
+<p>You can run <code class="docutils literal notranslate"><span class="pre">make</span></code> to list helper functions, and you can view the source
+of the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> file in case you need to add to it or run any once-off commands.</p>
+<p>For example, you can run management commands in containers using the same method
+used in the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>. E.g.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">exec</span> <span class="n">web</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">createsuperuser</span>
+</pre></div>
+</div>
+</section>
+<section id="architecture-and-how-it-works">
+<h2>Architecture and how it works<a class="headerlink" href="#architecture-and-how-it-works" title="Permalink to this heading">#</a></h2>
+<section id="containers">
+<h3>Containers<a class="headerlink" href="#containers" title="Permalink to this heading">#</a></h3>
+<p>The Docker configuration is primarily in <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose.yml</span></code>.</p>
+<p>There are four containers that start: a Postgres database, a Redis instance (for caching and use as a Celery broker),
+a web container running your Django process, and a Celery container for background jobs.</p>
+</section>
+<section id="settings">
+<h3>Settings<a class="headerlink" href="#settings" title="Permalink to this heading">#</a></h3>
+<p>The docker environment sets environment variables using the included <code class="docutils literal notranslate"><span class="pre">.env.docker</span></code> file.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">.env.docker</span></code> file is automatically ignored by git, so you can put any additional secrets there.
+It generally should not be checked into source control.
+You can instead add variables to <code class="docutils literal notranslate"><span class="pre">.env.example</span></code> to show what should be included.</p>
+</section>
+<section id="python-environments">
+<h3>Python environments<a class="headerlink" href="#python-environments" title="Permalink to this heading">#</a></h3>
+<p>The Python environment is run in the containers, which means you do not need to have your
+own local environment if you are always using Docker for development.
+Python requirements are automatically installed when the container builds.</p>
+<p>However, keep in mind that if you go this route, you will need to run all commands inside the containers
+as per the instructions below.</p>
+</section>
+</section>
+<section id="running-once-off-management-commands">
+<h2>Running once-off management commands<a class="headerlink" href="#running-once-off-management-commands" title="Permalink to this heading">#</a></h2>
+<p>Running commands on the server can be done using <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">compose</span></code>, by following
+the pattern used in the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code>.</p>
+<p>For example, to bootstrap Stripe subscriptions, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">exec</span> <span class="n">web</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">bootstrap_subscriptions</span>
+</pre></div>
+</div>
+<p>Or to promote a user to superuser, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">exec</span> <span class="n">web</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">promote_user_to_superuser</span> <span class="n">me</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+<p>Commonly used commands can be added to the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> for convenience.</p>
+</section>
+<section id="updating-python-packages">
+<h2>Updating Python packages<a class="headerlink" href="#updating-python-packages" title="Permalink to this heading">#</a></h2>
+<p>If you add or modify anything in your <code class="docutils literal notranslate"><span class="pre">requirements.in</span></code> (and <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>) files, you will have to rebuild
+your containers.</p>
+<p>The easiest way to add new packages is to add them to <code class="docutils literal notranslate"><span class="pre">requirements.in</span></code> and then run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">requirements</span>
+</pre></div>
+</div>
+<p>Which will rebuild your <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> file, rebuild your Docker containers,
+and then restart your app with the latest dependencies.</p>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this heading">#</a></h2>
+<p>You can use debug tools like <code class="docutils literal notranslate"><span class="pre">pdb</span></code> or <code class="docutils literal notranslate"><span class="pre">ipdb</span></code> by enabling service ports.</p>
+<p>This can be done by running your web container with the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">compose</span> <span class="n">run</span> <span class="o">--</span><span class="n">service</span><span class="o">-</span><span class="n">ports</span> <span class="n">web</span>
+</pre></div>
+</div>
+<p>If you want to set up debugging with PyCharm, it’s recommended to follow <a class="reference external" href="https://testdriven.io/blog/django-debugging-pycharm/">this guide on the topic</a>.</p>
+</section>
+<section id="other-resources">
+<h2>Other Resources<a class="headerlink" href="#other-resources" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/">Dockerizing Django with Postgres, Gunicorn, and Nginx</a>
+provides an overview of the setup, and has additional information about using Docker in production</p></li>
+<li><p><a class="reference external" href="https://docs.docker.com/compose/environment-variables/">Environment variables in Compose</a> is a good resource
+on the different ways to work with environment variables in Docker</p></li>
+</ul>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../teams/index.htm">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Using Teams</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../page-metadata/index.htm">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Project/Page Metadata and SEO</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Cory Zue
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Using Docker in Development</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#enter-the-project-directory">Enter the project directory</a></li>
+<li><a class="reference internal" href="#run-the-initialization-script">Run the initialization script</a></li>
+<li><a class="reference internal" href="#load-server">Load server</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-the-makefile">Using the Makefile</a></li>
+<li><a class="reference internal" href="#architecture-and-how-it-works">Architecture and how it works</a><ul>
+<li><a class="reference internal" href="#containers">Containers</a></li>
+<li><a class="reference internal" href="#settings">Settings</a></li>
+<li><a class="reference internal" href="#python-environments">Python environments</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-once-off-management-commands">Running once-off management commands</a></li>
+<li><a class="reference internal" href="#updating-python-packages">Updating Python packages</a></li>
+<li><a class="reference internal" href="#debugging">Debugging</a></li>
+<li><a class="reference internal" href="#other-resources">Other Resources</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div>
+<script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script type="module" src="../scriv-chat%400.0.5/dist/scriv-chat/scriv-chat.esm.js"></script>
+    
+<scriv-chat style="position:fixed; right: 20px; bottom: 20px;" visible="false" team="pegasus" bot="pegasus-docs" button-text="Ask a question"></scriv-chat>
+</body>
+</html>

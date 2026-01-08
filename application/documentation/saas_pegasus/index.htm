@@ -1,0 +1,598 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+        <script async="" src="gtag/js?id=UA-94102737-10"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-94102737-10');
+            
+        </script>
+    <link rel="index" title="Index" href="genindex/index.htm"><link rel="search" title="Search" href="search/index.htm"><link rel="next" title="Getting Started" href="getting-started/index.htm">
+        <link rel="canonical" href="index.html">
+
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1">
+        <title>Pegasus documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89">
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e">
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewbox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewbox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewbox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewbox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewbox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewbox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M13 12h5"></path>
+      <path d="M13 15h4"></path>
+      <path d="M13 18h1"></path>
+      <path d="M13 9h4"></path>
+      <path d="M13 6h1"></path>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">Pegasus  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  
+  <span class="sidebar-brand-text">Pegasus  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/index.htm">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customizations/index.htm">Customizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/index.htm">Settings and Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="code-structure/index.htm">Pegasus’s Code Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="using-virtualenvs/index.htm">Using Virtual Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="front-end/index.htm">The Front End</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="css/index.htm">CSS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="css/overview/index.htm">Choosing a CSS Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css/file-structure/index.htm">CSS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css/pegasus-css/index.htm">Pegasus CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css/tailwind/index.htm">Tailwind CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css/bootstrap/index.htm">Bootstrap (and Material)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css/bulma/index.htm">Bulma</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page-metadata/index.htm">Project/Page Metadata and SEO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker/index.htm">Using Docker in Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teams/index.htm">Using Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subscriptions/index.htm">Subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="payments/index.htm">E-Commerce / Payments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forms/index.htm">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apis/index.htm">APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internationalization/index.htm">Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wagtail/index.htm">Wagtail CMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="flags/index.htm">Feature Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="celery/index.htm">Celery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="async/index.htm">Async and Websocket Support</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="deployment/index.htm">Deployment</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment/overview/index.htm">Deployment Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/overview/index.htm#officially-supported-platforms">Officially supported platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/heroku/index.htm">Heroku</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/fly/index.htm">Fly.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/render/index.htm">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/digital-ocean/index.htm">Digital Ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/google-cloud/index.htm">Google Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/production-checklist/index.htm">Production checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/troubleshooting/index.htm">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="github-actions/index.htm">Using Github Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbooks/index.htm">Cookbooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading/index.htm">Upgrading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/index.htm">Version History and Release Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="saas-pegasus-s-documentation">
+<h1>SaaS Pegasus’s documentation<a class="headerlink" href="#saas-pegasus-s-documentation" title="Permalink to this heading">#</a></h1>
+<p>Here you’ll find everything you need to know about setting up and configuring Pegasus for your project.</p>
+<p>You’ll need a Pegasus license to proceed.
+If you don’t have one, head on over to <a class="reference external" href="https://www.saaspegasus.com/">saaspegasus.com</a> to get yours.</p>
+<p>If you’re just getting started, you’ll want to start with the <a class="reference internal" href="getting-started/index.htm"><span class="doc">Getting Started</span></a> guide.</p>
+<p>The source for this documentation can be <a class="reference external" href="https://github.com/czue/pegasus-docs/">found on Github</a> and
+contributions are most welcome!</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started/index.htm">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/index.htm#watch-the-video">Watch the video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/index.htm#create-and-download-your-project-codebase">Create and download your project codebase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/index.htm#set-up-source-control">Set up source control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/index.htm#get-up-and-running-with-docker">Get up and running with Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/index.htm#get-up-and-running-with-native-python">Get up and running with native Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/index.htm#post-installation-steps">Post-installation steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting-started/index.htm#building-your-application">Building Your Application</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="customizations/index.htm">Customizations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="customizations/index.htm#personalize-your-landing-page">Personalize your landing page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizations/index.htm#update-the-logged-in-experience">Update the logged-in experience</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizations/index.htm#python-packages">Python Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizations/index.htm#styles">Styles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="customizations/index.htm#javascript">Javascript</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/index.htm">Settings and Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#settings-and-environment-files">Settings and environment files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#project-metadata">Project Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#absolute-urls">Absolute URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#sending-email">Sending Email</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#user-sign-up">User Sign Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#stripe">Stripe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#google-analytics">Google Analytics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#sentry">Sentry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#openai">OpenAI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#celery">Celery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#mailing-list">Mailing List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#logging">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#storing-media-files">Storing media files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration/index.htm#django-debug-toolbar">Django Debug Toolbar</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="code-structure/index.htm">Pegasus’s Code Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="code-structure/index.htm#overall-structure">Overall structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-structure/index.htm#your-project-name-module">Your <code class="docutils literal notranslate"><span class="pre">{{project_name}}</span></code> module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-structure/index.htm#your-apps-module">Your <code class="docutils literal notranslate"><span class="pre">apps</span></code> module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-structure/index.htm#the-pegasus-module">The <code class="docutils literal notranslate"><span class="pre">pegasus</span></code> module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-structure/index.htm#the-requirements-folder">The <code class="docutils literal notranslate"><span class="pre">requirements</span></code> folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-structure/index.htm#the-assets-folder">The <code class="docutils literal notranslate"><span class="pre">assets</span></code> folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-structure/index.htm#the-static-folder">The <code class="docutils literal notranslate"><span class="pre">static</span></code> folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-structure/index.htm#the-templates-folder">The <code class="docutils literal notranslate"><span class="pre">templates</span></code> folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="code-structure/index.htm#code-formatting">Code formatting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using-virtualenvs/index.htm">Using Virtual Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="using-virtualenvs/index.htm#using-your-ide">Using your IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="using-virtualenvs/index.htm#manually-managing-environments">Manually managing environments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="front-end/index.htm">The Front End</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="front-end/index.htm#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="front-end/index.htm#front-end-files">Front-end files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="front-end/index.htm#prerequisites-to-building-the-front-end">Prerequisites to building the front end</a></li>
+<li class="toctree-l2"><a class="reference internal" href="front-end/index.htm#initial-setup">Initial setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="front-end/index.htm#building-in-development">Building in Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="front-end/index.htm#building-for-production">Building for production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="front-end/index.htm#long-term-best-practices">Long-term best practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="front-end/index.htm#providing-site-wide-javascript">Providing site-wide JavaScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="front-end/index.htm#typescript-and-type-checking">TypeScript and type checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="front-end/index.htm#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="css/index.htm">CSS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="css/overview/index.htm">Choosing a CSS Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css/file-structure/index.htm">CSS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css/pegasus-css/index.htm">Pegasus CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css/tailwind/index.htm">Tailwind CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css/bootstrap/index.htm">Bootstrap (and Material)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="css/bulma/index.htm">Bulma</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="page-metadata/index.htm">Project/Page Metadata and SEO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="page-metadata/index.htm#the-project-metadata-setting">The <code class="docutils literal notranslate"><span class="pre">PROJECT_METADATA</span></code> setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-metadata/index.htm#page-titles">Page Titles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="page-metadata/index.htm#sitemaps">Sitemaps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docker/index.htm">Using Docker in Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docker/index.htm#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker/index.htm#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker/index.htm#using-the-makefile">Using the Makefile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker/index.htm#architecture-and-how-it-works">Architecture and how it works</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker/index.htm#running-once-off-management-commands">Running once-off management commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker/index.htm#updating-python-packages">Updating Python packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker/index.htm#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker/index.htm#other-resources">Other Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="teams/index.htm">Using Teams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="teams/index.htm#example-app">Example App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teams/index.htm#data-models">Data Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="teams/index.htm#team-based-views">Team-based Views</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="subscriptions/index.htm">Subscriptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions/index.htm#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions/index.htm#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions/index.htm#configuring-the-pricing-table">Configuring the pricing table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions/index.htm#customer-portal">Customer Portal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions/index.htm#webhooks">Webhooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions/index.htm#supporting-multiple-currencies">Supporting multiple currencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions/index.htm#free-trials">Free trials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions/index.htm#feature-gating">Feature-Gating</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions/index.htm#per-unit-per-seat-billing">Per-Unit / Per-Seat Billing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions/index.htm#stripe-in-production">Stripe in Production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="subscriptions/index.htm#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="payments/index.htm">E-Commerce / Payments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="payments/index.htm#watch-a-video">Watch a video</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payments/index.htm#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="payments/index.htm#webhooks">Webhooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="forms/index.htm">Forms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="forms/index.htm#the-form-tags-module">The <code class="docutils literal notranslate"><span class="pre">form_tags</span></code> module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forms/index.htm#dynamic-forms-with-alpine-js">Dynamic forms with Alpine.js</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apis/index.htm">APIs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apis/index.htm#apis-in-pegasus">APIs in Pegasus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/index.htm#api-documentation">API Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/index.htm#api-clients">API Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/index.htm#api-keys">API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/index.htm#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="internationalization/index.htm">Internationalization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="internationalization/index.htm#translation-demo">Translation Demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internationalization/index.htm#localization">Localization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internationalization/index.htm#big-picture">Big picture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internationalization/index.htm#managing-enabled-languages">Managing enabled languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internationalization/index.htm#marking-text-in-your-app-for-translation">Marking text in your app for translation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internationalization/index.htm#creating-updating-translation-files">Creating / updating translation files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internationalization/index.htm#adding-actual-translations-for-other-languages">Adding actual translations for other languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internationalization/index.htm#technical-notes">Technical notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internationalization/index.htm#timezones">Timezones</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wagtail/index.htm">Wagtail CMS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wagtail/index.htm#video-overview">Video Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wagtail/index.htm#pegasus-and-wagtail">Pegasus and Wagtail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wagtail/index.htm#adding-blog-posts">Adding Blog Posts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wagtail/index.htm#customizing-wagtail">Customizing Wagtail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wagtail/index.htm#alternatives-to-wagtail">Alternatives to Wagtail</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flags/index.htm">Feature Flags</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="flags/index.htm#usage">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flags/index.htm#usage-with-teams">Usage with <em>Teams</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="flags/index.htm#example-usage">Example usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="celery/index.htm">Celery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="celery/index.htm#quick-start">Quick Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="celery/index.htm#setup-and-configuration">Setup and Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="async/index.htm">Async and Websocket Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="async/index.htm#the-async-websocket-demo-application">The Async / Websocket Demo Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="async/index.htm#websocket-urls">Websocket urls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="async/index.htm#asynchronous-web-servers">Asynchronous web servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="async/index.htm#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment/index.htm">Deployment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deployment/overview/index.htm">Deployment Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/overview/index.htm#officially-supported-platforms">Officially supported platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/heroku/index.htm">Heroku</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/fly/index.htm">Fly.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/render/index.htm">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/digital-ocean/index.htm">Digital Ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/google-cloud/index.htm">Google Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/production-checklist/index.htm">Production checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deployment/troubleshooting/index.htm">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="github-actions/index.htm">Using Github Actions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="github-actions/index.htm#running-django-tests">Running Django Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github-actions/index.htm#building-the-front-end">Building the Front End</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cookbooks/index.htm">Cookbooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cookbooks/index.htm#use-the-django-admin-ui">Use the Django Admin UI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbooks/index.htm#migrating-to-auto-formatted-code">Migrating to auto-formatted code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookbooks/index.htm#delete-pegasus-examples">Delete Pegasus Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading/index.htm">Upgrading</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="upgrading/index.htm#using-branches-recommended">Using branches (recommended)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading/index.htm#using-patches-if-you-can-t-use-branches">Using patches (if you can’t use branches)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading/index.htm#other-notes">Other notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrading/index.htm#if-you-don-t-have-a-pure-pegasus-branch">If you don’t have a “pure” Pegasus branch</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/index.htm">Version History and Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#id1">2023.10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#id2">2023.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-9-2">Version 2023.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-9-1">Version 2023.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-9">Version 2023.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-8-2">Version 2023.8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-8-1">Version 2023.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-8">Version 2023.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-7">Version 2023.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-6-1">Version 2023.6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-6">Version 2023.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-5-1">Version 2023.5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-5">Version 2023.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-4-2">Version 2023.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-4-1">Version 2023.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-4">Version 2023.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-3-5">Version 2023.3.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-3-4">Version 2023.3.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-3-3">Version 2023.3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#id28">Fixed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-3-2">Version 2023.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-3-1">Version 2023.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-3">Version 2023.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2023-2">Version 2023.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-12">Version 2022.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-11-1">Version 2022.11.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-11">Version 2022.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-10">Version 2022.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-9">Version 2022.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-8-2">Version 2022.8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-8-1">Version 2022.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-8">Version 2022.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-7-1">Version 2022.7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-7">Version 2022.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-6">Version 2022.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-5">Version 2022.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-4-2">Version 2022.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-4-1">Version 2022.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-4">Version 2022.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-2022-3">Version 2022.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-22-1">Version 0.22.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-22">Version 0.22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-21-1">Version 0.21.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-21">Version 0.21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-20">Version 0.20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-19">Version 0.19</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-18-1">Version 0.18.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-18">Version 0.18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-17-1">Version 0.17.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-17">Version 0.17</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-16-2">Version 0.16.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-16-1">Version 0.16.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-16">Version 0.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-15">Version 0.15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-14-5">Version 0.14.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-14-4">Version 0.14.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-14-3">Version 0.14.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-14-2">Version 0.14.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-14-1">Version 0.14.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-14">Version 0.14</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-13-2">Version 0.13.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-13-1">Version 0.13.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-13-0">Version 0.13.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-12-1">Version 0.12.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-12-0">Version 0.12.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-11-3">Version 0.11.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-11-2">Version 0.11.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-11-1">Version 0.11.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-11-0">Version 0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-10-5">Version 0.10.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-10-4">Version 0.10.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-10-3">Version 0.10.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-10-2">Version 0.10.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-10-1">Version 0.10.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-10-0">Version 0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-9-0">Version 0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-8-3">Version 0.8.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-8-2">Version 0.8.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-8-1">Version 0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-8-0">Version 0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-7-4">Version 0.7.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-7-3">Version 0.7.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-7-2">Version 0.7.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-7-1">Version 0.7.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-7-0">Version 0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-6-1">Version 0.6.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-6-0">Version 0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-5-2">Version 0.5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-5-1">Version 0.5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-5">Version 0.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/index.htm#version-0-4-and-earlier">Version 0.4 and earlier</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="getting-started/index.htm">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Getting Started</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Cory Zue
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div>
+<script data-url_root="#" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    <script type="module" src="scriv-chat%400.0.5/dist/scriv-chat/scriv-chat.esm.js"></script>
+    
+<scriv-chat style="position:fixed; right: 20px; bottom: 20px;" visible="false" team="pegasus" bot="pegasus-docs" button-text="Ask a question"></scriv-chat>
+</body>
+</html>

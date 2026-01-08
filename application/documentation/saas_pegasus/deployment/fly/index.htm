@@ -1,0 +1,444 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/">
+
+        <script async="" src="../../gtag/js?id=UA-94102737-10"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            
+            gtag('config', 'UA-94102737-10');
+            
+        </script>
+    <link rel="index" title="Index" href="../../genindex/index.htm"><link rel="search" title="Search" href="../../search/index.htm"><link rel="next" title="Render" href="../render/index.htm"><link rel="prev" title="Heroku" href="../heroku/index.htm">
+        <link rel="canonical" href="index.htm">
+
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1">
+        <title>Fly.io - Pegasus documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css">
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89">
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e">
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewbox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewbox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewbox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewbox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewbox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewbox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="M13 12h5"></path>
+      <path d="M13 15h4"></path>
+      <path d="M13 18h1"></path>
+      <path d="M13 9h4"></path>
+      <path d="M13 6h1"></path>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.htm"><div class="brand">Pegasus  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.htm">
+  
+  
+  <span class="sidebar-brand-text">Pegasus  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search/" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started/index.htm">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../customizations/index.htm">Customizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration/index.htm">Settings and Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../code-structure/index.htm">Pegasus’s Code Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../using-virtualenvs/index.htm">Using Virtual Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-end/index.htm">The Front End</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../css/index.htm">CSS</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../css/overview/index.htm">Choosing a CSS Theme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/file-structure/index.htm">CSS File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/pegasus-css/index.htm">Pegasus CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/tailwind/index.htm">Tailwind CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/bootstrap/index.htm">Bootstrap (and Material)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../css/bulma/index.htm">Bulma</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../page-metadata/index.htm">Project/Page Metadata and SEO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docker/index.htm">Using Docker in Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../teams/index.htm">Using Teams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../subscriptions/index.htm">Subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../payments/index.htm">E-Commerce / Payments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../forms/index.htm">Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../apis/index.htm">APIs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../internationalization/index.htm">Internationalization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../wagtail/index.htm">Wagtail CMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../flags/index.htm">Feature Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../celery/index.htm">Celery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../async/index.htm">Async and Websocket Support</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.htm">Deployment</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview/index.htm">Deployment Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/index.htm#officially-supported-platforms">Officially supported platforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../heroku/index.htm">Heroku</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Fly.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../render/index.htm">Render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../digital-ocean/index.htm">Digital Ocean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../google-cloud/index.htm">Google Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../production-checklist/index.htm">Production checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../troubleshooting/index.htm">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../github-actions/index.htm">Using Github Actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbooks/index.htm">Cookbooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../upgrading/index.htm">Upgrading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../release-notes/index.htm">Version History and Release Notes</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="fly-io">
+<h1>Fly.io<a class="headerlink" href="#fly-io" title="Permalink to this heading">#</a></h1>
+<p>Pegasus supports container-based deployment to <a class="reference external" href="https://fly.io/">Fly.io</a>.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<p>If you haven’t already, install the <a class="reference external" href="https://fly.io/docs/hands-on/install-flyctl/">flyctl CLI</a>.</p>
+<p>The create an account with <code class="docutils literal notranslate"><span class="pre">fly</span> <span class="pre">auth</span> <span class="pre">signup</span></code> or login with <code class="docutils literal notranslate"><span class="pre">fly</span> <span class="pre">auth</span> <span class="pre">login</span></code>.</p>
+</section>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<p>Once you have logged in via the CLI you can create your app and the services it will need.
+For each of the commands below follow the prompts given.</p>
+<p>In the example below the “Chicago, Illinois (US) (ord)” region is selected. You may change
+the region to suit your needs, but it should be consistent throughout the commands.</p>
+<ol class="arabic">
+<li><p>Create your app in Fly.io</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>fly<span class="w"> </span>launch<span class="w"> </span>--dockerfile<span class="w"> </span>Dockerfile.web<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dockerignore-from-gitignore<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--no-deploy<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span><span class="o">{</span>app-name<span class="o">}</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--region<span class="w"> </span>ord
+
+<span class="c1"># Answer &#39;yes&#39; to the first question:</span>
+
+An<span class="w"> </span>existing<span class="w"> </span>fly.toml<span class="w"> </span>file<span class="w"> </span>was<span class="w"> </span>found<span class="w"> </span><span class="k">for</span><span class="w"> </span>app<span class="w"> </span><span class="o">{</span>app-name<span class="o">}</span>
+?<span class="w"> </span>Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span>copy<span class="w"> </span>its<span class="w"> </span>configuration<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>app?<span class="w"> </span>Yes
+
+Creating<span class="w"> </span>app<span class="w"> </span><span class="k">in</span><span class="w"> </span>/path/to/app/source
+Using<span class="w"> </span>dockerfile<span class="w"> </span>Dockerfile.web
+Selected<span class="w"> </span>App<span class="w"> </span>Name:<span class="w"> </span><span class="o">{</span>app-name<span class="o">}</span>
+
+<span class="c1"># Select the organization you want to deploy the app to:</span>
+
+?<span class="w"> </span>Select<span class="w"> </span>organization:<span class="w"> </span>My<span class="w"> </span>Org<span class="w"> </span><span class="o">(</span>my_org<span class="o">)</span>
+
+Created<span class="w"> </span>app<span class="w"> </span><span class="o">{</span>app-name<span class="o">}</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>organization<span class="w"> </span>my_org
+Wrote<span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span>fly.toml
+Your<span class="w"> </span>app<span class="w"> </span>is<span class="w"> </span>ready.<span class="w"> </span>Deploy<span class="w"> </span>with<span class="w"> </span><span class="sb">`</span>flyctl<span class="w"> </span>deploy<span class="sb">`</span>
+</pre></div>
+</div>
+</li>
+<li><p>Create the app database</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>fly<span class="w"> </span>postgres<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="o">{</span>app-name<span class="o">}</span>-db<span class="w"> </span>--region<span class="w"> </span>ord
+
+<span class="c1"># ? Select Organization: My Org</span>
+<span class="c1"># ? Select configuration: Development - Single node, 1x shared CPU, 256MB RAM, 1GB disk</span>
+</pre></div>
+</div>
+</li>
+<li><p>Attach the DB to your app</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>fly<span class="w"> </span>postgres<span class="w"> </span>attach<span class="w"> </span><span class="o">{</span>app-name<span class="o">}</span>-db<span class="w"> </span>-a<span class="w"> </span><span class="o">{</span>app-name<span class="o">}</span>
+
+Postgres<span class="w"> </span>cluster<span class="w"> </span><span class="o">{</span>app-name<span class="o">}</span>-db<span class="w"> </span>is<span class="w"> </span>now<span class="w"> </span>attached<span class="w"> </span>to<span class="w"> </span><span class="o">{</span>app-name<span class="o">}</span>
+The<span class="w"> </span>following<span class="w"> </span>secret<span class="w"> </span>was<span class="w"> </span>added<span class="w"> </span>to<span class="w"> </span>&lt;app<span class="w"> </span>name&gt;:
+<span class="w">  </span><span class="nv">DATABASE_URL</span><span class="o">=</span>postgres://.....
+</pre></div>
+</div>
+</li>
+<li><p>Create the Redis instance</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>fly<span class="w"> </span>redis<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="o">{</span>app-name<span class="o">}</span>-redis<span class="w"> </span>--region<span class="w"> </span>ord
+
+?<span class="w"> </span>Select<span class="w"> </span>Organization:<span class="w"> </span>My<span class="w"> </span>Org<span class="w"> </span><span class="o">(</span>my_org<span class="o">)</span>
+?<span class="w"> </span>Would<span class="w"> </span>you<span class="w"> </span>like<span class="w"> </span>to<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>eviction?<span class="w"> </span>Yes
+?<span class="w"> </span>Select<span class="w"> </span>an<span class="w"> </span>Upstash<span class="w"> </span>Redis<span class="w"> </span>plan<span class="w"> </span>Free:<span class="w"> </span><span class="m">100</span><span class="w"> </span>MB<span class="w"> </span>Max<span class="w"> </span>Data<span class="w"> </span>Size
+Your<span class="w"> </span>Upstash<span class="w"> </span>Redis<span class="w"> </span>database<span class="w"> </span><span class="o">{</span>app-name<span class="o">}</span>-redis<span class="w"> </span>is<span class="w"> </span>ready.
+Apps<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>personal<span class="w"> </span>org<span class="w"> </span>can<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>at<span class="w"> </span>redis://.....
+</pre></div>
+</div>
+</li>
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">REDIS_URL</span></code> secret</p>
+<p>Using the Redis URL from the command above run:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>fly<span class="w"> </span>secrets<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">REDIS_URL</span><span class="o">={</span>url<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="deploying">
+<h2>Deploying<a class="headerlink" href="#deploying" title="Permalink to this heading">#</a></h2>
+<p>You are now ready to deploy your app.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>fly<span class="w"> </span>deploy
+</pre></div>
+</div>
+<p><strong>After deploying, review the <a class="reference internal" href="../production-checklist/index.htm"><span class="doc std std-doc">production checklist</span></a> for a list
+of common next steps</strong></p>
+</section>
+<section id="running-database-migrations">
+<h2>Running Database Migrations<a class="headerlink" href="#running-database-migrations" title="Permalink to this heading">#</a></h2>
+<p>Database migrations are applied during deploy. This is configured in the <code class="docutils literal notranslate"><span class="pre">fly.toml</span></code> file.</p>
+</section>
+<section id="settings-and-secrets">
+<h2>Settings and Secrets<a class="headerlink" href="#settings-and-secrets" title="Permalink to this heading">#</a></h2>
+<p>Fly.io builds use the <code class="docutils literal notranslate"><span class="pre">settings_production.py</span></code> file.
+You can add settings here or in the base <code class="docutils literal notranslate"><span class="pre">settings.py</span></code> file, and use environment variables to manage any secrets,
+following the examples in these files.</p>
+<p>Secrets are managed in Fly.io via the web UI or on the command line using the CLI:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>fly<span class="w"> </span>secrets<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="nv">MY_VAR</span><span class="o">=</span>secret_value
+</pre></div>
+</div>
+</section>
+<section id="running-one-off-commands">
+<h2>Running One-Off Commands<a class="headerlink" href="#running-one-off-commands" title="Permalink to this heading">#</a></h2>
+<p>You can one-off commands via a shell:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>fly<span class="w"> </span>ssh<span class="w"> </span>console
+
+app<span class="w"> </span>$<span class="w"> </span>./code/manage.py<span class="w"> </span><span class="o">[</span>command<span class="o">]</span>
+</pre></div>
+</div>
+</section>
+<section id="celery-support">
+<h2>Celery Support<a class="headerlink" href="#celery-support" title="Permalink to this heading">#</a></h2>
+<p>Out of the box, Pegasus is configured to run Celery using the <a class="reference external" href="https://fly.io/docs/reference/configuration/#the-processes-section">multiprocess support</a> provided by
+Fly.io.</p>
+<p>For alternatives see <a class="reference external" href="https://fly.io/docs/app-guides/multiple-processes/">https://fly.io/docs/app-guides/multiple-processes/</a></p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../render/index.htm">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Render</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../heroku/index.htm">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Heroku</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Cory Zue
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Fly.io</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#deploying">Deploying</a></li>
+<li><a class="reference internal" href="#running-database-migrations">Running Database Migrations</a></li>
+<li><a class="reference internal" href="#settings-and-secrets">Settings and Secrets</a></li>
+<li><a class="reference internal" href="#running-one-off-commands">Running One-Off Commands</a></li>
+<li><a class="reference internal" href="#celery-support">Celery Support</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div>
+<script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script type="module" src="../../scriv-chat%400.0.5/dist/scriv-chat/scriv-chat.esm.js"></script>
+    
+<scriv-chat style="position:fixed; right: 20px; bottom: 20px;" visible="false" team="pegasus" bot="pegasus-docs" button-text="Ask a question"></scriv-chat>
+</body>
+</html>
