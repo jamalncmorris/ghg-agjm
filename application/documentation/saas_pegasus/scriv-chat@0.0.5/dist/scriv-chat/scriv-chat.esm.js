@@ -1,2 +1,0 @@
-import{p as t,b as o}from"./p-4b27093f.js";export{s as setNonce}from"./p-4b27093f.js";const e=()=>{const o=import.meta.url;const s={};if(o!==""){s.resourcesUrl=new URL(".",o).href}return t(s)};e().then((t=>o([["p-547ff087",[[1,"scriv-chat",{team:[1],bot:[1],buttonText:[1,"button-text"],visible:[1028],scriv:[1],loaded:[32]}]]]],t)));
-//# sourceMappingURL=scriv-chat.esm.js.map
