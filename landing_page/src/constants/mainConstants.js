@@ -10,23 +10,23 @@ const urls = {
 
 const companyInfo = {
     // Company Info
-    companyName: 'S&A Energy Consultants LTD',
-    companyNumber: '15572983',
-    companyTradingName: 'S&A Energy Group',
-    companyAddress: '189 Mauldeth Road, Manchester, England, M19 1BA',
+    companyName: '',
+    companyNumber: '',
+    companyTradingName: '',
+    companyAddress: '',
     companyLogo: '/images/brand/sanda.png',
-    companyPhone:'01616478108',
-    eMailAddress: 'admin@sandaenergy.co.uk',
-    icoNumber: 'ZB677359',
+    companyPhone:'',
+    eMailAddress: '',
+    icoNumber: '',
     // Email.js Variables
-    eMailJsPublicKey: 'vZFCKwUlemcMI-vf-', // https://dashboard.emailjs.com/admin/account 
+    eMailJsPublicKey: '', // https://dashboard.emailjs.com/admin/account 
     eMailJsService: 'service_gmail', // https://dashboard.emailjs.com/admin
     eMailJsTemplate: 'template_survey', // https://dashboard.emailjs.com/admin/templates
     // Social Media Pages
     socialMediaFacebook: 'https://en-gb.facebook.com/',
     socialMediaInstagram: 'https://www.instagram.com/',
     socialMediaTiktok: 'https://www.tiktok.com/',
-    socialMediaYoutube: 'https://www.youtube.com/SandDEnergy',
+    socialMediaYoutube: 'https://www.youtube.com/',
 }
 
 const hero = {
